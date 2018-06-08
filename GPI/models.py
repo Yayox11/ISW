@@ -92,6 +92,10 @@ class Obra(models.Model):
     direccion = models.CharField(max_length=100)
     nombre = models.CharField(max_length=50)
     trabajadorobra = models.ForeignKey(TrabajadorObra, on_delete=models.CASCADE)
+    bodeguero = models.ManyToManyField(Bodeguero)
+
+    def __str__(self):
+        return self.nombre
 
 
 class Materiales(models.Model):

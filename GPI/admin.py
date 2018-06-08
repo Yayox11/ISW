@@ -3,7 +3,7 @@ from django import forms
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
-from GPI.models import MyUser
+from GPI.models import *
 
 
 class UserCreationForm(forms.ModelForm):
@@ -65,6 +65,13 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(MyUser, UserAdmin)
+admin.site.register(Bodeguero)
+admin.site.register(TrabajadorObra)
+admin.site.register(EncargadoCompras)
+admin.site.register(Obra)
+admin.site.register(Materiales)
+admin.site.register(SolicitudMaterial)
+admin.site.register(OrdenCompra)
 admin.site.unregister(Group)
 
 
