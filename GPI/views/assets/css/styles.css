@@ -26,3 +26,26 @@
   border-bottom:3px solid purple;
 }
 
+.sidebar-option:hover {
+  border-bottom:3px solid purple;
+}
+
+.iconitos {
+  color:purple;
+}
+
+#carita {
+  font-size:100px;
+}
+
+#menu-toggle {
+  font-size:20px;
+}
+
+.btn-link:hover {
+  color:purple;
+  text-decoration:underline;
+  background-color:transparent;
+  border-color:transparent;
+}
+
