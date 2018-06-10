@@ -9,4 +9,5 @@ urlpatterns = [
     path('auth', views.auth_view, name = 'auth'),
     path('loggedin', views.loggedin, name = 'loggedin'),
     path('invalid_login', views.invalid_login, name ='invalid_login'),
+    path('pedido2',views.pedir_view,name='pedido2'),
 ]

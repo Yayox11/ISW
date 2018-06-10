@@ -5,16 +5,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISW</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="assets/fonts/simple-line-icons.min.css">
-    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu1.css">
-    <link rel="stylesheet" href="assets/css/SIdebar-Responsive-2.css">
-    <link rel="stylesheet" href="assets/css/SIdebar-Responsive-21.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="/GPI/views/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/GPI/views/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="/GPI/views/assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="/GPI/views/assets/fonts/simple-line-icons.min.css">
+    <link rel="stylesheet" href="/GPI/views/assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="/GPI/views/assets/css/Sidebar-Menu.css">
+    <link rel="stylesheet" href="/GPI/views/assets/css/Sidebar-Menu1.css">
+    <link rel="stylesheet" href="/GPI/views/assets/css/SIdebar-Responsive-2.css">
+    <link rel="stylesheet" href="/GPI/views/assets/css/SIdebar-Responsive-21.css">
+    <link rel="stylesheet" href="/GPI/views/assets/css/styles.css">
 </head>
 
 <body>
@@ -31,19 +31,22 @@
         </div>
     </nav>
     <div class="contact-clean">
-        <form>
+        <form method="post">
+            {% csrf_token %}
             <h1 class="text-center">Solicitud materiales</h1>
-            <div class="form-group"><input class="form-control" type="text" name="personal" placeholder="Nombre Solicitador"></div>
-            <div class="form-group"><input class="form-control" type="text" name="obra" placeholder="Obra"></div>
-            <div class="form-group"><input class="form-control" type="text" name="nombre-prod" placeholder="Producto"></div>
-            <div class="form-group"><input class="form-control" type="number" name="cantidad" placeholder="Cantidad"></div>
-            <div class="form-group text-center"><button class="btn btn-primary text-center" type="button">Enviar</button></div>
+            <div class="form-group">{{ form.fecha }}</div>
+            <div class="form-group">{{ form.material }}</div>
+            <div class="form-group">{{ form.cantidad }}</div>
+            <div class="form-group">{{ form.urgencia }}</div>
+            <div class="form-group">{{ form.trabajadorobra }}</div>
+            <div class="form-group">{{ form.obra }}</div>
+            <div class="form-group text-center"><button class="btn btn-primary text-center" type="submit">Enviar</button></div>
         </form>
     </div>
     <div></div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/Sidebar-Menu.js"></script>
+    <script src="/GPI/views/assets/js/jquery.min.js"></script>
+    <script src="/GPI/views/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/GPI/views/assets/js/Sidebar-Menu.js"></script>
 </body>
 
 </html>

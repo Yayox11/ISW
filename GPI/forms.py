@@ -27,3 +27,32 @@ class MyUserCreationForm(UserCreationForm):
 
     ##class Meta:
         ##model = MyUser
+
+class PedidoForm2(forms.ModelForm):
+    urgencia = forms.ChoiceField(choices=[('urgente','Urgente'),('normal','Normal'),('bajo','Bajo')])
+    class Meta:
+        model = SolicitudMaterial
+
+        fields = [
+            'fecha',
+            'material',
+            'cantidad',
+            'urgencia',
+            'trabajadorobra',
+            'obra',
+        ]
+        labels = {
+            'fecha': 'Fecha',
+            'material':'Material',
+            'cantidad':'Cantidad',
+            'urgencia':'Urgencia',
+            'trabajadorobra':'Trabajador de Obra',
+            'obra':'Obra',
+        }
+        widgets = {
+            'fecha':forms.DateInput(attrs={'class': 'form-group'}),
+            'material':forms.CheckboxSelectMultiple(),
+            'cantidad':forms.NumberInput(attrs={'class': 'form-group'}),
+            'trabajadorobra':forms.CheckboxSelectMultiple(),
+            'obra':forms.Select(attrs={'class': 'form-group'}),
+        }

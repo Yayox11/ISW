@@ -103,13 +103,17 @@ class Materiales(models.Model):
     cantidad = models.IntegerField()
     obra = models.ManyToManyField(Obra)
 
+    def __str__(self):
+        return self.nombre
+
 
 class SolicitudMaterial(models.Model):
     fecha = models.DateField()
-    material = models.CharField(max_length=100)
-    urgencia = models.CharField(max_length=1)
+    material = models.ManyToManyField(Materiales)
+    cantidad = models.IntegerField(default=0)
+    urgencia = models.CharField(max_length=10)
     trabajadorobra = models.ManyToManyField(TrabajadorObra)
-    bodeguero = models.ManyToManyField(Bodeguero)
+    obra = models.ForeignKey(Obra, on_delete=models.CASCADE)
 
 
 class OrdenCompra(models.Model):

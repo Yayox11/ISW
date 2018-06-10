@@ -46,3 +46,14 @@ def loggedin(request):
 
 def invalid_login(request):
     return render(request, 'invalid_login.html')
+
+def pedir_view(request):
+    if request.method == 'POST':
+        form = PedidoForm2(request.POST)
+        print(form)
+        if form.is_valid():
+            form.save()
+        return redirect('index')
+    else:
+        form = PedidoForm2()
+    return render(request,'pedir.html',{'form':form})
