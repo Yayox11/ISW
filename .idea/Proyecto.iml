@@ -16,7 +16,7 @@
       <sourceFolder url="file://$MODULE_DIR$/GPI" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GPI/views" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="Python 3.6.4 virtualenv at E:\Proyects\GPIVENV" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">

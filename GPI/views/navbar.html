@@ -1,3 +1,4 @@
+{% block head %}
 {% load staticfiles %}
 <!DOCTYPE html>
 <html>
@@ -17,8 +18,9 @@
     <link rel="stylesheet" href="{% static 'assets/css/SIdebar-Responsive-21.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
 </head>
-
+{% endblock %}
 <body>
+{% block navbar %}
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
@@ -28,8 +30,13 @@
                 <li> <a href="#" class="sidebar-option">Ver Stock</a><a href="#" class="sidebar-option"><i class="icon-logout"></i>&nbsp;Cerrar Sesion</a></li>
             </ul>
         </div>
+
         <div class="page-content-wrapper">
+
+
             <div class="container-fluid"><a class="btn btn-link iconitos menu" role="button" href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars iconitos"></i>Menu</a>
+
+                {% block contenido %}
                 <section>
                     <div class="jumbotron">
                         <h1 class="text-center">Bienvenido [inserte usuario]</h1>
@@ -43,12 +50,15 @@
                         <div></div>
                     </div>
                 </div>
+            {% endblock %}
             </div>
         </div>
     </div>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/Sidebar-Menu.js"></script>
+    {% endblock %}
+
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/Sidebar-Menu.js' %}"></script>
 </body>
 
 </html>

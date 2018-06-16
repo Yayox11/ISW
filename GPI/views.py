@@ -46,3 +46,6 @@ def loggedin(request):
 
 def invalid_login(request):
     return render(request, 'invalid_login.html')
+
+def ver_pedidos(request):
+    return HttpResponse('ver pedidos')
