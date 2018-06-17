@@ -1,7 +1,7 @@
-{% extends 'pedir.html' %}
+{% extends 'head.html' %}
 
-{% block navbar %}
-   <nav class="navbar navbar-light navbar-expand-md">
+{% block body %}
+   <nav class="navbar navbar-light navbar-expand-md", style="background-color: mediumpurple">
         <div class="container-fluid"><a class="navbar-brand"><strong>GPI</strong></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse topnav"
                 id="navcol-1">
@@ -12,9 +12,6 @@
             </div>
         </div>
    </nav>
-{% endblock %}
-
-{% block form %}
 
     {% if form.errors %}
         <p class="error">Sorry, that's not a valid username or password</p>
@@ -27,9 +24,18 @@
     <form action = "/auth" method="post">
             {% csrf_token %}
             <h1 class="text-center">Inicio de Sesión</h1>
-            <div class="form-group"><input class="form-control" type="email" name="username" id = "username" placeholder="Ingresa tu email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" id = "password" placeholder="Ingresa tu clave"></div>
-            <div class="form-group text-center"><button class="btn btn-primary text-center" type="submit">Iniciar</button></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 text-center">
+                    <div class="form-group"><input class="form-control" type="email" name="username" id = "username" placeholder="Ingresar correo"></div>
+                <div class="form-group"><input class="form-control" type="password" name="password" id = "password" placeholder="Ingresar clave"></div>
+                <div class="form-group text-center"><button class="btn btn-primary text-center" type="submit">Iniciar</button></div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
     </form>
+
 
 {% endblock %}
