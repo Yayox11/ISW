@@ -57,3 +57,8 @@ def pedir_view(request):
     else:
         form = PedidoForm2()
     return render(request,'pedir.html',{'form':form})
+def ver_pedidos(request):
+    return render(request, 'ver_pedidos.html')
+
+def stock(request):
+    return render(request, 'stock.html')
