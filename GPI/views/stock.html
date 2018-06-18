@@ -1,64 +1,34 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISW</title>
-    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/Contact-Form-Clean.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/styles.css'%}">
-</head>
-
-<body>
-    <nav class="navbar navbar-light navbar-expand-md">
-        <div class="container-fluid"><a class="navbar-brand" href="#"><strong>GPI</strong></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse topnav"
-                id="navcol-1">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="pedir.html">Solicitar</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="stock.html">Stock</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="index.html">Revisar solicitudes</a></li>
-                </ul>
+{% extends 'navbar.html' %}
+{% block contenido %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-lg-1"></div>
+        <div class="col-md-4 col-lg-10">
+            <div class="table-responsive table-bordered">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="float-none" style="background-color:#9d58f5;">Producto</th>
+                            <th style="background-color:#9d58f5;">Cantidad</th>
+                            <th style="background-color:#9d58f5;">Lugar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cell 1</td>
+                            <td>Cell 2</td>
+                            <td>Cell 3</td>
+                        </tr>
+                        <tr>
+                            <td>Cell 3</td>
+                            <td>Cell 2</td>
+                            <td>Cell 3</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </nav>
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 col-lg-1"></div>
-                <div class="col-md-4 col-lg-10">
-                    <div class="table-responsive table-bordered">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th class="float-none" style="background-color:#9d58f5;">Producto</th>
-                                    <th style="background-color:#9d58f5;">Cantidad</th>
-                                    <th style="background-color:#9d58f5;">Lugar</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Cell 1</td>
-                                    <td>Cell 2</td>
-                                    <td>Cell 3</td>
-                                </tr>
-                                <tr>
-                                    <td>Cell 3</td>
-                                    <td>Cell 2</td>
-                                    <td>Cell 3</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-1"></div>
-            </div>
-        </div>
+        <div class="col-md-4 col-lg-1"></div>
     </div>
-    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
-    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
-</body>
-
-</html>
+</div>
+{% endblock %}

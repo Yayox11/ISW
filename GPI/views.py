@@ -48,4 +48,7 @@ def invalid_login(request):
     return render(request, 'invalid_login.html')
 
 def ver_pedidos(request):
-    return HttpResponse('ver pedidos')
+    return render(request, 'ver_pedidos.html')
+
+def stock(request):
+    return render(request, 'stock.html')
