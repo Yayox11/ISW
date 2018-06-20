@@ -56,8 +56,7 @@ ROOT_URLCONF = 'Proyecto.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'GPI/views')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'GPI/views')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,6 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/GPI/views/'
 LOGOUT_REDIRECT_URL = '/'
+
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'GPI/views'),)
 AUTH_USER_MODEL = 'GPI.MyUser'
 #AUTHENTICATION_BACKENDS = ('GPI.backends.MyUserAuth',)

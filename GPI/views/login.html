@@ -1,41 +1,41 @@
-{% load staticfiles %}
-<!DOCTYPE html>
-<html>
+{% extends 'head.html' %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISW</title>
-    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/Contact-Form-Clean.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-</head>
+{% block body %}
+   <nav class="navbar navbar-light navbar-expand-md", style="background-color: mediumpurple">
+        <div class="container-fluid"><a class="navbar-brand"><strong>GPI</strong></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse topnav"
+                id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" >Logout</a></li>
 
-<body>
-    <nav class="navbar navbar-light navbar-expand-md">
-        <div class="container-fluid"><a class="navbar-brand" ><strong>GPI</strong></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                </ul>
+            </div>
         </div>
-    </nav>
-    <div class="contact-clean">
-        {% if form.errors %}
-            <p class="error">Sorry, that's not a valid username or password</p>
-        {% endif %}
+   </nav>
 
-        {% if form.errors %}
-            <p>Your username and password didn't match. Please try again.</p>
-        {% endif %}
+    {% if form.errors %}
+        <p class="error">Sorry, that's not a valid username or password</p>
+    {% endif %}
 
-        <form action = "/auth" method="post">
-                {% csrf_token %}
-                <h2 class="text-center">Iniciar sesión</h2>
-                <div class="form-group"><input class="form-control" type="email" name="username" id = "username" placeholder="Ingresa tu email"></div>
-                <div class="form-group"><input class="form-control" type="password" name="password" id = "password" placeholder="Ingresa tu clave"></div>
-                <div class="form-group text-center"><button class="btn btn-primary text-center" type="submit">Enviar</button></div>
-        </form>
-    </div>
-    <div></div>
-    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
-    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
-</body>
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
 
-</html>
+    <form action = "/auth" method="post">
+            {% csrf_token %}
+            <h1 class="text-center">Inicio de Sesión</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 text-center">
+                    <div class="form-group"><input class="form-control" type="email" name="username" id = "username" placeholder="Ingresar correo"></div>
+                <div class="form-group"><input class="form-control" type="password" name="password" id = "password" placeholder="Ingresar clave"></div>
+                <div class="form-group text-center"><button class="btn btn-primary text-center" type="submit">Iniciar</button></div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+    </form>
+
+
+{% endblock %}
