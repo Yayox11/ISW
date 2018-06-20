@@ -134,14 +134,20 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
 
 class Bodeguero(models.Model):
     user = models.OneToOneField(MyUser, on_delete=models.CASCADE, primary_key=True)
+    def __str__(self):
+        return self.nombre
 
 
 class TrabajadorObra(models.Model):
     user = models.OneToOneField(MyUser, on_delete=models.CASCADE, primary_key=True)
+    def __str__(self):
+        return self.nombre
 
 
 class EncargadoCompras(models.Model):
     user = models.OneToOneField(MyUser, on_delete=models.CASCADE, primary_key=True)
+    def __str__(self):
+        return self.nombre
 
 
 class Obra(models.Model):

@@ -35,7 +35,7 @@ class MaterialForm(forms.ModelForm):
             'nombre': 'Nombre del material',
             'cantidad': 'Cantidad',
             'unidades': 'Unidades de medida',
-            'urgencia': 'Urgencia del material',
+            'urgencia': 'Urgencia',
         }
 
         widgets = {

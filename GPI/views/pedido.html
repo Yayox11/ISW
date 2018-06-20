@@ -10,37 +10,74 @@
                         <form method="post">
                             {% csrf_token %}
                             <div class = "form-group">
-                                <label>{{ solicitud_form.fecha_requerida.label }}</label>
-                                {{ solicitud_form.fecha_requerida }}
-                            </div>
+                                <div class="row">
+                                    <div class="col-5 text-left">
+                                        <label>{{ solicitud_form.fecha_requerida.label }}</label>
+                                    </div>
 
+                                    <div class="col-7 text-left align-content-left">
+                                        {% load i18n %}
+                                        {% language 'es' %}
+                                        {{ solicitud_form.fecha_requerida }}
+                                        {% endlanguage %}
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group">
-                                <label>{{ solicitud_form.obra.label }}</label>
-                                {{ solicitud_form.obra }}
+                                 <div class="row">
+                                    <div class="col-5 text-left">
+                                        <label>{{ solicitud_form.obra.label }}</label>
+                                    </div>
+                                    <div class="col-7 text-left align-content-left">
+                                        {{ solicitud_form.obra }}
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="form-group text">
-                                <label>{{ material_form.nombre.label }}</label>
-                                {{ material_form.nombre }}
+                            <div class="form-group text-left align-content-left">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <label>{{ material_form.nombre.label }}</label>
+                                    </div>
+                                    <div class="col-7">
+                                        {{ material_form.nombre }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group text-left align-content-left">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <label>{{ material_form.cantidad.label }}</label>
+                                    </div>
+                                    <div class="col-7">
+                                        {{ material_form.cantidad }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group text-left align-content-left">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <label>{{ material_form.unidades.label }}</label>
+                                    </div>
+                                    <div class="col-7">
+                                        {{ material_form.unidades }}
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="form-group">
-                                <label>{{ material_form.cantidad.label }}</label>
-                                {{ material_form.cantidad }}
-                            </div>
-
-                            <div class="form-group">
-                                <label>{{ material_form.unidades.label }}</label>
-                                {{ material_form.unidades }}
-                            </div>
-
-                            <div class="form-group">
-                                <label>{{ material_form.urgencia.label }}</label>
-                                {{ material_form.urgencia }}
+                            <div class="form-group text-left align-content-left">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <label>{{ material_form.urgencia.label }}</label>
+                                    </div>
+                                    <div class="col-7">
+                                        {{ material_form.urgencia }}
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-group text-center">
-                                <button class="btn btn-primary text-cente" type="submit">Enviar</button>
+                                <button class="btn btn-primary text-center" type="submit">Enviar</button>
                             </div>
 
                         </form>
