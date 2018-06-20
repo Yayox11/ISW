@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'Proyecto.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
+        'NAME': 'gpi',
         'USER': 'root',
-        'PASSWORD': 'Yayo_11.',
+        'PASSWORD': 'panconcaca',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -125,7 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/GPI/views/'
-
+LOGOUT_REDIRECT_URL = '/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'GPI/views'),)
 AUTH_USER_MODEL = 'GPI.MyUser'
 #AUTHENTICATION_BACKENDS = ('GPI.backends.MyUserAuth',)

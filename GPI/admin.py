@@ -34,7 +34,7 @@ class UserChangeForm(forms.ModelForm):
 
     class Meta:
         model = MyUser
-        fields = ['email','password', 'rut', 'is_active', 'is_admin']
+        fields = ['email', 'first_name', 'second_name', 'apellido_paterno', 'apellido_materno', 'password', 'rut', 'is_active', 'is_admin', 'is_bodeguero', 'is_encargado_compras', 'is_trabajador_obra']
 
     def clean_password(self):
         return self.initial["password"]
@@ -44,19 +44,19 @@ class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
 
-    list_display = ('email', 'rut', 'is_admin')
-    list_filter = ('is_admin',)
+    list_display = ('email', 'first_name', 'second_name', 'apellido_paterno', 'apellido_materno', 'rut', 'is_admin', 'is_bodeguero', 'is_encargado_compras', 'is_trabajador_obra')
+    list_filter = ('is_admin', 'is_bodeguero', 'is_trabajador_obra', 'is_encargado_compras')
 
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ('rut',)}),
-        ('Permissions', {'fields': ('is_admin',)}),
+        ('Personal info', {'fields': ('rut', 'first_name', 'second_name','apellido_paterno', 'apellido_materno',)}),
+        ('Permissions', {'fields': ('is_admin', 'is_bodeguero', 'is_encargado_compras', 'is_trabajador_obra',)}),
     )
 
     add_fieldsets = (
         (None, {
             'classes':('wide',),
-            'fields': ('email', 'rut', 'password1', 'password2')}
+            'fields': ('email', 'rut', 'first_name', 'second_name', 'apellido_paterno', 'apellido_materno', 'password1', 'password2')}
         ),
     )
     search_fields = ('email',)
@@ -71,7 +71,7 @@ admin.site.register(EncargadoCompras)
 admin.site.register(Obra)
 admin.site.register(Materiales)
 admin.site.register(SolicitudMaterial)
-admin.site.register(OrdenCompra)
+admin.site.register(MaterialSolicitado)
 admin.site.unregister(Group)
 
 

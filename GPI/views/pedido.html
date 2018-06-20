@@ -1,0 +1,58 @@
+{% extends "navbar.html" %}
+
+{% block page-content %}
+
+    <div class="page-content-wrapper">
+            <div class="container-fluid"><a class="btn btn-link iconitos menu" role="button" href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars iconitos"></i>Menu</a>
+                <section>
+
+                    <div class="contact-clean">
+                        <form method="post">
+                            {% csrf_token %}
+                            <div class = "form-group">
+                                <label>{{ solicitud_form.fecha_requerida.label }}</label>
+                                {{ solicitud_form.fecha_requerida }}
+                            </div>
+
+                            <div class="form-group">
+                                <label>{{ solicitud_form.obra.label }}</label>
+                                {{ solicitud_form.obra }}
+                            </div>
+
+                            <div class="form-group text">
+                                <label>{{ material_form.nombre.label }}</label>
+                                {{ material_form.nombre }}
+                            </div>
+
+                            <div class="form-group">
+                                <label>{{ material_form.cantidad.label }}</label>
+                                {{ material_form.cantidad }}
+                            </div>
+
+                            <div class="form-group">
+                                <label>{{ material_form.unidades.label }}</label>
+                                {{ material_form.unidades }}
+                            </div>
+
+                            <div class="form-group">
+                                <label>{{ material_form.urgencia.label }}</label>
+                                {{ material_form.urgencia }}
+                            </div>
+
+                            <div class="form-group text-center">
+                                <button class="btn btn-primary text-cente" type="submit">Enviar</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </section>
+                <div></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

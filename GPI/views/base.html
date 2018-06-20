@@ -26,19 +26,20 @@
         {% block sidebar %}
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand text-center"> <a href="/loggedin">GPI</a></li>
-               {% if user.is_bodeguero %}<li> <a href="" class="sidebar-option">Ver Pedidos</a></li>{% endif %}
-               {% if user.is_trabajador_obra %} <li> <a href="/pedido" class="sidebar-option">Realizar Pedidos</a></li> {% endif %}
-                <li> <a href="#" class="sidebar-option">Ver Stock</a><a href="/logout" class="sidebar-option"><i class="icon-logout"></i>&nbsp;Cerrar Sesion</a></li>
+                <li class="sidebar-brand text-center"> <a href="#">GPI</a></li>
+                <li> <a href="#" class="sidebar-option">Ver Pedidos</a></li>
+                <li> <a href="#" class="sidebar-option">Realizar Pedidos</a></li>
+                <li> <a href="#" class="sidebar-option">Ver Stock</a><a href="#" class="sidebar-option"><i class="icon-logout"></i>&nbsp;Cerrar Sesion</a></li>
             </ul>
         </div>
         {% endblock %}
+
         {% block page-content %}
           <div class="page-content-wrapper">
             <div class="container-fluid"><a class="btn btn-link iconitos menu" role="button" href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars iconitos"></i>Menu</a>
                 <section>
                     <div class="jumbotron">
-                        <h1 class="text-center">Bienvenido {{user.first_name}} {{ user.second_name }} {{ user.apellido_paterno }} {{ user.apellido_materno }}</h1>
+                        <h1 class="text-center">Bienvenido [inserte usuario]</h1>
                         <p class="text-center"><i class="icon ion-happy-outline iconitos" id="carita"></i></p>
                         <p class="text-center"></p>
                     </div>
@@ -60,4 +61,5 @@
     {% endblock %}
 
 </body>
+
 </html>
