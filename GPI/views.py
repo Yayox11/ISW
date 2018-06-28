@@ -63,20 +63,14 @@ def SolicitudCreate(request):
 
     return render(request, 'pedido.html',{'solicitud_form': solicitud_form, 'material_form': material_form})
 
-
-def pedir_view(request):
-    if request.method == 'POST':
-        form = PedidoForm2(request.POST)
-        print(form)
-        if form.is_valid():
-            form.save()
-        return redirect('index')
-    else:
-        form = PedidoForm2()
-    return render(request,'pedir.html',{'form':form})
-
 def ver_pedidos(request):
-    return render(request, 'ver_pedidos.html')
+    obra_trabajador = Obra.objects.filter(bodeguero__user__email=request.user.email).distinct().prefetch_related('bodeguero').order_by('nombre')
+    print(obra_trabajador)
+    lista_ordenes = []
+    for ob in obra_trabajador:
+        print(ob)
+        lista_ordenes.append(SolicitudMaterial.objects.filter(obra__nombre=ob).distinct().prefetch_related('obra').order_by('fecha_requerida','fecha_solicitud','obra'))
+    return render(request,'ver_pedidos.html',{'ordenes':lista_ordenes})
 
 def stock(request):
     return render(request, 'stock.html')

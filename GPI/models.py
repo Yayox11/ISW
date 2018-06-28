@@ -135,19 +135,19 @@ class MyUser(AbstractBaseUser, PermissionsMixin):
 class Bodeguero(models.Model):
     user = models.OneToOneField(MyUser, on_delete=models.CASCADE, primary_key=True)
     def __str__(self):
-        return self.nombre
+        return self.user.email
 
 
 class TrabajadorObra(models.Model):
     user = models.OneToOneField(MyUser, on_delete=models.CASCADE, primary_key=True)
     def __str__(self):
-        return self.nombre
+        return self.user.email
 
 
 class EncargadoCompras(models.Model):
     user = models.OneToOneField(MyUser, on_delete=models.CASCADE, primary_key=True)
     def __str__(self):
-        return self.nombre
+        return self.user.email
 
 
 class Obra(models.Model):

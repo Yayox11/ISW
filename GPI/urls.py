@@ -10,7 +10,6 @@ urlpatterns = [
     path('auth', views.auth_view, name = 'auth'),
     path('loggedin', views.loggedin, name = 'loggedin'),
     path('invalid_login', views.invalid_login, name ='invalid_login'),
-    path('pedido2',views.pedir_view,name='pedido2'),
     path('logout', logout, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
     path('ver_pedidos', views.ver_pedidos, name = 'ver_pedidos'),
     path('stock', views.stock, name = 'stock'),

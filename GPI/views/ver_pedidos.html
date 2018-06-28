@@ -1,4 +1,5 @@
 {% extends 'navbar.html' %}
+{% load func_extras %}
 {% block contenido %}
 <div class="container">
             <div class="row">
@@ -8,35 +9,35 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th class="float-none" style="background-color:#a144f5;">Pedidos</th>
-                                    <th style="background-color:#a144f5;">Personal</th>
+                                    <!--<th class="float-none" style="background-color:#a144f5;">Pedidos</th>-->
                                     <th style="background-color:#a144f5;">Obra</th>
-                                    <th style="background-color:#a144f5;">Fecha</th>
+                                    <th style="background-color:#a144f5;">Fecha Solicitud</th>
+                                    <th style="background-color:#a144f5;">Fecha Requerida</th>
+                                    <th style="background-color:#a144f5;">Tiempo Restante</th>
                                     <th style="background-color:#a144f5;">Estado</th>
                                 </tr>
                             </thead>
                             <tbody>
+                            {% for item in ordenes %}
+                                {% for elementos in item %}
                                 <tr>
-                                    <td>Cell 1</td>
-                                    <td>Cell 2</td>
-                                    <td>Cell 3</td>
-                                    <td>Cell 4</td>
-                                    <td>Cell 5</td>
+                                    {% load i18n %}
+                                    {% language 'es' %}
+                                    <td>{{ elementos.obra }}</td>
+                                    <td>{{ elementos.fecha_solicitud }}</td>
+                                    <td>{{ elementos.fecha_requerida }}</td>
+                                    <td>{{ elementos.fecha_solicitud|timesince:elementos.fecha_requerida }}</td>
+                                    {% if elementos.fecha_solicitud|dias:elementos.fecha_requerida == 0  %}
+                                        <td style="background-color: #721c24">Retrasado</td>
+                                    {% elif elementos.fecha_solicitud|dias:elementos.fecha_requerida < 10  %}
+                                        <td style="background-color: #ffc107">Pronto a expirar</td>
+                                    {% else  %}
+                                        <td style="background-color: #1c7430">Ok</td>
+                                    {% endif %}
+                                    {% endlanguage %}
                                 </tr>
-                                <tr>
-                                    <td>Cell 1</td>
-                                    <td>Cell 2</td>
-                                    <td>Cell 3</td>
-                                    <td>Cell 4</td>
-                                    <td>Cell 5</td>
-                                </tr>
-                                <tr>
-                                    <td>Cell 1</td>
-                                    <td>Cell 2</td>
-                                    <td>Cell 3</td>
-                                    <td>Cell 4</td>
-                                    <td>Cell 5</td>
-                                </tr>
+                                {% endfor %}
+                            {% endfor %}
                             </tbody>
                         </table>
                     </div>
