@@ -26,10 +26,10 @@
                                     <td>{{ elementos.obra }}</td>
                                     <td>{{ elementos.fecha_solicitud }}</td>
                                     <td>{{ elementos.fecha_requerida }}</td>
-                                    <td>{{ elementos.fecha_solicitud|timesince:elementos.fecha_requerida }}</td>
-                                    {% if elementos.fecha_solicitud|dias:elementos.fecha_requerida == 0  %}
+                                    <td>{{ elementos.fecha_requerida|timeuntil }}</td>
+                                    {% if elementos.fecha_requerida|dias <= 0  %}
                                         <td style="background-color: #721c24">Retrasado</td>
-                                    {% elif elementos.fecha_solicitud|dias:elementos.fecha_requerida < 10  %}
+                                    {% elif elementos.fecha_requerida|dias < 10  %}
                                         <td style="background-color: #ffc107">Pronto a expirar</td>
                                     {% else  %}
                                         <td style="background-color: #1c7430">Ok</td>
