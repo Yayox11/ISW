@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from GPI.models import *
+from django.contrib.admin.widgets import AdminDateWidget
 
 class SolicitudForm(forms.ModelForm):
    class Meta:

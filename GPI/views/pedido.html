@@ -77,7 +77,12 @@
                             </div>
 
                             <div class="form-group text-center">
-                                <button class="btn btn-primary text-center" type="submit">Enviar</button>
+                                <button class="btn btn-primary text-center" type="submit" name="agregar">Agregar pedido</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Ver pedidos</button>
+
+                            </div>
+                        <div class="form-group text-center">
+                            <button class="btn btn-primary text-center" type="submit" name="enviar">Enviar pedidos</button>
                             </div>
 
                         </form>
@@ -91,5 +96,47 @@
                 </div>
             </div>
         </div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalCenterTitle">Revise los pedidos antes de enviar.</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    <div class="modal-body">
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+
+                                                <th>Material</th>
+                                                <th>Cantidad</th>
+                                                <th>Fecha Solicitud</th>
+                                                <th>Urgencia</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for element in items %}
+                                                <tr>
+                                                    {% load i18n %}
+                                                    {% language 'es' %}
+                                                        <td>{{ element.0 }}</td>
+                                                        <td>{{ element.1 }}</td>
+                                                        <td>{{ element.2 }}</td>
+                                                        <td>{{ element.3 }}</td>
+                                                    {% endlanguage %}
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Editar</button>
+                                            <button type="submit" class="btn btn-primary"  name="guardar">Guardar</button>
+                                        </div>
+                                    </div>
+                             </div>
+                            </div>
 
 {% endblock %}
