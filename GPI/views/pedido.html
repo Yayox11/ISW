@@ -1,11 +1,12 @@
+
 {% extends "navbar.html" %}
 
+<script src='/GPI/views/assets/js/pedidos.js'></script>
+
 {% block page-content %}
-
     <div class="page-content-wrapper">
-            <div class="container-fluid"><a class="btn btn-link iconitos menu" role="button" href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars iconitos"></i>Menu</a>
+        <div class="container-fluid"><a class="btn btn-link iconitos menu" role="button" href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars iconitos"></i>Menu</a>
                 <section>
-
                     <div class="contact-clean" >
                         <form method="post">
                             {% csrf_token %}
@@ -88,14 +89,9 @@
                         </form>
                     </div>
                 </section>
-                <div></div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div></div>
-                    </div>
-                </div>
-            </div>
         </div>
+    </div>
+
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">

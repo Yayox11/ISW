@@ -1,34 +1,59 @@
-{% extends 'navbar.html' %}
+{% extends 'navbar_tables.html' %}
 {% block contenido %}
 <div class="container">
-    <div class="row">
-        <div class="col-md-4 col-lg-1"></div>
-        <div class="col-md-4 col-lg-10">
-            <div class="table-responsive table-bordered">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th class="float-none" style="background-color:#9d58f5;">Producto</th>
-                            <th style="background-color:#9d58f5;">Cantidad</th>
-                            <th style="background-color:#9d58f5;">Lugar</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Cell 1</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                        </tr>
-                        <tr>
-                            <td>Cell 3</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                        </tr>
-                    </tbody>
-                </table>
+<div class="page-content-wrapper">
+        <section>
+            <div class="contact-clean" >
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group text-center">
+                        <div class="row">
+                        <div class="col-5 text-center">
+                            <label>{{ stock_form.obra.label }}</label>
+                        </div>
+                         <div class="col-7 text-center align-content-center">
+                            {{ stock_form.obra }}
+                        </div>
+                        </div>
+                        <div class="form-group text-center">
+                            <button class="btn btn-primary text-center" type="submit" name="mostrar" id="mostrar">Mostrar</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        </div>
-        <div class="col-md-4 col-lg-1"></div>
-    </div>
+        </section>
+    <section>
+        <div class="row">
+                <div class="col-md-4 col-lg-12" id="example_div">
+                    {% load i18n %}
+                    {% language 'es' %}
+                        <table id="example" class="table table-striped table-bordered text-center" style="width:100%">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Cantidad</th>
+                                </tr>
+                            </thead>
+                        <tbody>
+                            {% for item in lista_materiales %}
+                                <tr>
+                                    <td>{{ item.nombre }}</td>
+                                    <td>{{ item.cantidad }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                    <th>Nombre</th>
+                                    <th>Cantidad</th>
+
+                            </tr>
+                        </tfoot>
+                        </table>
+                {% endlanguage %}
+                </div>
+            </div>
+    </section>
+</div>
 </div>
 {% endblock %}

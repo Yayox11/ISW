@@ -1,0 +1,71 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+{% block head %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISW</title>
+    <link rel="stylesheet" href=" {% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="subsection" href=" {% static 'assets/css/tables.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href=" {% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href=" {% static 'assets/fonts/ionicons.min.css' %}">
+    <link rel="stylesheet" href=" {% static 'assets/fonts/simple-line-icons.min.css' %}">
+    <link rel="stylesheet" href=" {% static 'assets/css/Contact-Form-Clean.css' %}">
+    <link rel="stylesheet" href=" {% static 'assets/css/Sidebar-Menu.css' %}">
+    <link rel="stylesheet" href=" {% static 'assets/css/Sidebar-Menu1.css' %}">
+    <link rel="stylesheet" href=" {% static 'assets/css/SIdebar-Responsive-2.css' %}">
+    <link rel="stylesheet" href=" {% static 'assets/css/SIdebar-Responsive-21.css' %}">
+    <link rel="stylesheet" href=" {% static 'assets/css/styles.css' %}">
+</head>
+{% endblock %}
+
+
+<body>
+    <div id="wrapper">
+        {% block sidebar %}
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand text-center"> <a href="/loggedin">GPI</a></li>
+               {% if user.is_bodeguero %}<li> <a href="ver_pedidos" class="sidebar-option">Ver Pedidos</a></li>{% endif %}
+               {% if user.is_trabajador_obra %} <li> <a href="/pedido" class="sidebar-option">Realizar Pedidos</a></li> {% endif %}
+                <li> <a href="stock" class="sidebar-option">Ver Stock</a><a href="/logout" class="sidebar-option"><i class="icon-logout"></i>&nbsp;Cerrar Sesion</a></li>
+            </ul>
+        </div>
+        {% endblock %}
+        {% block page-content %}
+          <div class="page-content-wrapper">
+            <div class="container-fluid"><a class="btn btn-link iconitos menu" role="button" href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars iconitos"></i>Menu</a>
+
+                {% block contenido %}
+                <section>
+                    <div class="jumbotron">
+                        <h1 class="text-center">Bienvenido {{user.first_name}} {{ user.second_name }} {{ user.apellido_paterno }} {{ user.apellido_materno }}</h1>
+                        <p class="text-center"><i class="icon ion-happy-outline iconitos" id="carita"></i></p>
+                        <p class="text-center"></p>
+                    </div>
+                </section>
+                <div></div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div></div>
+                    </div>
+                </div>
+            {% endblock %}
+            </div>
+        </div>
+        {% endblock %}
+    </div>
+    {% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src = "https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src=" {% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src=" {% static 'assets/js/Sidebar-Menu.js' %}"></script>
+    <script src="{% static 'assets/js/ver_pedidos.js' %}"></script>
+    {% endblock %}
+
+</body>
+</html>

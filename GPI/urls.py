@@ -12,5 +12,5 @@ urlpatterns = [
     path('invalid_login', views.invalid_login, name ='invalid_login'),
     path('logout', logout, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
     path('ver_pedidos', views.ver_pedidos, name = 'ver_pedidos'),
-    path('stock', views.stock, name = 'stock'),
+    path('stock', views.ver_materiales, name = 'stock'),
 ]

@@ -84,5 +84,18 @@ def ver_pedidos(request):
         lista_ordenes.append(SolicitudMaterial.objects.filter(obra__nombre=ob).distinct().prefetch_related('obra').order_by('fecha_requerida','fecha_solicitud','obra'))
     return render(request,'ver_pedidos.html',{'ordenes':lista_ordenes})
 
+def ver_materiales(request):
+    if request.method == 'POST':
+        stock_form = StockFrom(request.user.email)
+        nombre = Obra.objects.filter(pk=request.POST.get('obra'))
+        try:
+            materiales_obra = Materiales.objects.filter(obra=nombre[0])
+        except Materiales.DoesNotExist:
+            materiales_obra = []
+        print(materiales_obra)
+        return render(request,'stock.html',{'stock_form':stock_form, 'lista_materiales':materiales_obra})
+    stock_form = StockFrom(request.user.email)
+    return render(request,'stock.html',{'stock_form':stock_form,'lista_materiaes':[]})
+
 def stock(request):
     return render(request, 'stock.html')

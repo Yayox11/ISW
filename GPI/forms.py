@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from GPI.models import *
+from django.db.models import Q
 from django.contrib.admin.widgets import AdminDateWidget
 
 class SolicitudForm(forms.ModelForm):
@@ -21,6 +22,23 @@ class SolicitudForm(forms.ModelForm):
             'obra': forms.Select(attrs={'class':'form-group'}),
        }
 
+class StockFrom(forms.ModelForm):
+    class Meta:
+        model = Materiales
+        exclude = ('trabajadorobra', 'direccion')
+        fields = [
+            'obra'
+        ]
+        labels={
+            'obra':'Obra'
+        }
+        widgets = {
+            'obra': forms.Select(attrs={'class':'form-control'})
+        }
+
+    def __init__(self, user, *args, **kwargs):
+        super(StockFrom, self).__init__(*args, **kwargs)
+        self.fields['obra'].queryset = Obra.objects.filter(Q(bodeguero__user__email=user) | Q(trabajadorobra__user__email = user))
 
 class MaterialForm(forms.ModelForm):
     class Meta:
