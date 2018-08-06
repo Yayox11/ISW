@@ -52,6 +52,17 @@ def SolicitudCreate(request):
     if request.method == 'POST':
         solicitud_form = SolicitudForm(request.POST)
         material_form = MaterialForm(request.POST)
+        if solicitud_form.is_valid() and material_form.is_valid():
+            material = material_form.save(commit=False)
+            solicitud = solicitud_form.save(commit=False)
+            solicitud.trabajadorobra = request.user.trabajadorobra
+            solicitud.fecha_solicitud = timezone.now()
+            solicitud.save()
+            material.solicitud = solicitud
+            material.save()
+            return HttpResponseRedirect('loggedin')
+
+        ''''
         if "enviar" in request.POST and dict_elementos.__len__() != 0:
             for element in dict_elementos.values():
                 element[1].save()
@@ -71,6 +82,7 @@ def SolicitudCreate(request):
                 solicitud_form = SolicitudForm()
                 material_form = MaterialForm()
                 return render(request, 'pedido.html',{'solicitud_form': solicitud_form, 'material_form': material_form, 'items' : dict_html.values()})
+    '''
     else:
         solicitud_form = SolicitudForm()
         material_form = MaterialForm()
