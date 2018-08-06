@@ -19,6 +19,12 @@ Requerimientos:
 
 #Instrucciones para usar el software
 
-Primero migrar la base con:
-
+Primero importar la base de datos adjuntada:
+    gpi_data_base.sql
+    
+Para correr el servidor:
     manage.py runserver
+    
+Utilizar el siguiente usuario con todos los permisos:
+    *correo: test@usm.cl
+    *password: test1234
