@@ -1,7 +1,9 @@
 "# ISW"
 
 Grupo : JOC
+
 Integrantes:
+
   Orlando Andrade
   Juan Pablo Castillo
   Christopher Gilbert
