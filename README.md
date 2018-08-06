@@ -4,9 +4,11 @@ Grupo : JOC
 
 Integrantes:
 
-  Orlando Andrade
-  Juan Pablo Castillo
-  Christopher Gilbert
+  +Orlando Andrade
+  
+  +Juan Pablo Castillo
+  
+  +Christopher Gilbert
 
 Requerimientos:
 
