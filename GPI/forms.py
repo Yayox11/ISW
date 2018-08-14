@@ -2,6 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from GPI.models import *
 from django.db.models import Q
+from django.forms import modelformset_factory
 from django.contrib.admin.widgets import AdminDateWidget
 
 class SolicitudForm(forms.ModelForm):
@@ -64,6 +65,11 @@ class MaterialForm(forms.ModelForm):
 
 
         }
+
+MaterialesFormSet = modelformset_factory(
+    MaterialSolicitado,
+    form = MaterialForm,
+)
 
 class MyUserCreationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):

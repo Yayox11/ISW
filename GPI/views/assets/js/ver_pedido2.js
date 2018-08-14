@@ -5,7 +5,7 @@
             event.preventDefault();
 
             var $formGroup = $(this).closest('.form-group');
-            var $multipleFormGroup = $formGroup.closest('.multiple-form-group');
+             var $multipleFormGroup = $formGroup.closest('.multiple-form-group');
             var $formGroupClone = $formGroup.clone();
 
             $(this)

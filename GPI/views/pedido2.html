@@ -1,34 +1,106 @@
 {% extends 'navbar_pedidos.html' %}
 {% load func_extras %}
-{% block contenido %}
-<div class="container">
-	<div class="row">
-		<h2>Multiple fields contact form</h2>
-	    <div class="col-md-4">
-            <div class="contacts">
-                <label>Contacts:</label>
-                    <div class="form-group multiple-form-group input-group">
-                        <div class="input-group-btn input-group-select">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                <span class="concept">Phone</span> <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="#phone">Phone</a></li>
-                                <li><a href="#fax">Fax</a></li>
-                                <li><a href="#skype">Skype</a></li>
-                                <li><a href="#email">E-mail</a></li>
-                                <li><a href="#www">Web</a></li>
-                            </ul>
-                            <input type="hidden" class="input-group-select-val" name="contacts['type'][]" value="phone">
-                        </div>
-                        <input type="text" name="contacts['value'][]" class="form-control">
-                        <span class="input-group-btn">
-                            <button type="button" class="btn btn-success btn-add">+</button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-	</div>
+{% block page-content %}
+    <div class="page-content-wrapper">
+        <div class="container-fluid"><a class="btn btn-link iconitos menu" role="button" href="#menu-toggle" id="menu-toggle"><i class="fa fa-bars iconitos"></i>Menu</a>
+                <section>
+            <div class="container">
+		<h2>Solicitud de Materiales</h2>
+
+
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class = "">
+                                <div class="row">
+                                    <div class="col-5 text-left">
+                                        <label>{{ solicitud_form.fecha_requerida.label }}</label>
+                                    </div>
+
+                                    <div class="col-7 text-left align-content-left">
+                                        {% load i18n %}
+                                        {% language 'es' %}
+                                        {{ solicitud_form.fecha_requerida }}
+                                        {% endlanguage %}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                 <div class="row">
+                                    <div class="col-5 text-left">
+                                        <label>{{ solicitud_form.obra.label }}</label>
+                                    </div>
+                                    <div class="col-7 text-left align-content-left">
+                                        {{ solicitud_form.obra }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{ formset.management_form }}
+                            {% for material_form in formset %}
+
+                                <div class="form-group multiple-form-group input-group">
+
+
+                                        <div >
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <label>{{ material_form.nombre.label }}</label>
+                                                </div>
+                                                <div class="col-7">
+                                                    {{ material_form.nombre }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div >
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <label>{{ material_form.cantidad.label }}</label>
+                                                </div>
+                                                <div class="col-7">
+                                                    {{ material_form.cantidad }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div >
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <label>{{ material_form.unidades.label }}</label>
+                                                </div>
+                                                <div class="col-7">
+                                                    {{ material_form.unidades }}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div >
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <label>{{ material_form.urgencia.label }}</label>
+                                                </div>
+                                                <div class="col-7">
+                                                    {{ material_form.urgencia }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--<input type="hidden" class="input-group-select-val" name="contacts['type'][]" value="phone">-->
+                                    <!--</div>-->
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-success btn-add">+</button>
+                                    </span>
+
+
+                                </div>
+                            {% endfor %}
+
+                    <div>
+                            <button class="btn btn-primary text-center" type="submit" name="enviar">Enviar pedidos</button>
+                     </div>
+
+            </form>
+
 </div>
+                </section>
+        </div>
+    </div>
+
 {% endblock %}

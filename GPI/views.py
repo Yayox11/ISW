@@ -109,8 +109,57 @@ def ver_materiales(request):
     stock_form = StockFrom(request.user.email)
     return render(request,'stock.html',{'stock_form':stock_form,'lista_materiaes':[]})
 
+
+def Sol_Material(request):
+    if request.method == 'POST':
+        print("PASO11")
+        solicitud_form = SolicitudForm(request.POST)
+        formset = MaterialesFormSet(request.POST, request.FILES,queryset=MaterialSolicitado.objects.none())
+        print("formset_valid :", formset.is_valid())
+        print("solicitud_form:", solicitud_form.is_valid())
+        if formset.is_valid() and solicitud_form.is_valid():
+            print("PASO")
+            solicitud = solicitud_form.save(commit=False)
+            solicitud.trabajadorobra = request.user.trabajadorobra
+            solicitud.fecha_solicitud = timezone.now()
+            solicitud.save()
+            for form in formset:
+                material = form.save(commit = False)
+                material.solicitud = solicitud
+                material.save()
+            return HttpResponseRedirect('loggedin')
+    else:
+        print("PASO22")
+        solicitud_form = SolicitudForm()
+        formset = MaterialesFormSet(queryset=MaterialSolicitado.objects.none())
+    return render(request, 'pedido2.html',{'solicitud_form': solicitud_form, 'formset': formset})
+
+
+
+
 def stock(request):
     return render(request, 'stock.html')
 
 def ver_pedido2(request):
-    return render(request,'pedido2.html')
+    if request.method == 'POST':
+        solicitud_form = SolicitudForm(request.POST)
+        formset = MaterialesFormSet(request.POST,request.FILES, queryset=MaterialSolicitado.objects.none())
+        print("formset_valid :", formset.is_valid())
+        print("solicitud_form:", solicitud_form.is_valid())
+        if formset.is_valid() and solicitud_form.is_valid():
+            solicitud = solicitud_form.save(commit=False)
+            solicitud.trabajadorobra = request.user.trabajadorobra
+            solicitud.fecha_solicitud = timezone.now()
+            solicitud.save()
+            for form in formset:
+                print(form)
+                material = form.save(commit = False)
+                material.solicitud = solicitud
+                material.save()
+
+            return HttpResponseRedirect('loggedin')
+    else:
+        solicitud_form = SolicitudForm()
+        formset = MaterialesFormSet(queryset=MaterialSolicitado.objects.none())
+    return render(request, 'pedido2.html',{'solicitud_form': solicitud_form, 'formset': formset})
+
