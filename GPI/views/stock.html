@@ -2,8 +2,9 @@
 {% block contenido %}
 <div class="container">
 <div class="page-content-wrapper">
-        <section>
-            <div class="contact-clean" >
+    <div class="row">
+        <div class="col-5">
+            <div class="alert alert-primary" role="alert">
                 <form method="post">
                     {% csrf_token %}
                     <div class="form-group text-center">
@@ -21,7 +22,9 @@
                     </div>
                 </form>
             </div>
-        </section>
+        </div>
+
+    </div>
     <section>
         <div class="row">
                 <div class="col-md-4 col-lg-12" id="example_div">

@@ -111,3 +111,6 @@ def ver_materiales(request):
 
 def stock(request):
     return render(request, 'stock.html')
+
+def ver_pedido2(request):
+    return render(request,'pedido2.html')

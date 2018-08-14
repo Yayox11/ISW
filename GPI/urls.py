@@ -13,4 +13,5 @@ urlpatterns = [
     path('logout', logout, {'next_page': settings.LOGOUT_REDIRECT_URL}, name='logout'),
     path('ver_pedidos', views.ver_pedidos, name = 'ver_pedidos'),
     path('stock', views.ver_materiales, name = 'stock'),
+    path('ver_pedido2',views.ver_pedido2,name='pedido2'),
 ]
