@@ -150,12 +150,19 @@ def ver_pedido2(request):
             solicitud = solicitud_form.save(commit=False)
             solicitud.trabajadorobra = request.user.trabajadorobra
             solicitud.fecha_solicitud = timezone.now()
-            solicitud.save()
+
             for form in formset:
-                print(form)
-                material = form.save(commit = False)
-                material.solicitud = solicitud
-                material.save()
+                if form.is_valid():
+                    solicitud.save()
+                    print(form)
+                    material = form.save(commit = False)
+                    material.solicitud = solicitud
+                    material.save()
+                else:
+                    solicitud_form = SolicitudForm()
+                    formset = MaterialesFormSet(queryset=MaterialSolicitado.objects.none())
+                    return render(request, 'pedido2.html', {'solicitud_form': solicitud_form, 'formset': formset})
+
 
             return HttpResponseRedirect('loggedin')
     else:

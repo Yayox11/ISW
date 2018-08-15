@@ -2,8 +2,9 @@
 
 <!DOCTYPE html>
 <html>
-{% block head %}
+
 <head>
+    {% block head %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISW</title>
@@ -17,8 +18,12 @@
     <link rel="stylesheet" href=" {% static 'assets/css/SIdebar-Responsive-2.css' %}">
     <link rel="stylesheet" href=" {% static 'assets/css/SIdebar-Responsive-21.css' %}">
     <link rel="stylesheet" href=" {% static 'assets/css/styles.css' %}">
-</head>
+    {% endblock %}
+{% block custom-head %}
+
 {% endblock %}
+</head>
+
 
 
 <body>
@@ -61,6 +66,7 @@
     <script src=" {% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src=" {% static 'assets/js/Sidebar-Menu.js' %}"></script>
     {% endblock %}
+{% block custom_js %}{% endblock %}
 
 </body>
 </html>
