@@ -33,7 +33,7 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand text-center"> <a href="/loggedin">GPI</a></li>
                {% if user.is_bodeguero %}<li> <a href="ver_pedidos" class="sidebar-option">Ver Pedidos</a></li>{% endif %}
-               {% if user.is_trabajador_obra %} <li> <a href="/pedido" class="sidebar-option">Realizar Pedidos</a></li> {% endif %}
+               {% if user.is_trabajador_obra %} <li> <a href="/ver_pedido2" class="sidebar-option">Realizar Pedidos</a></li> {% endif %}
                 <li> <a href="stock" class="sidebar-option">Ver Stock</a><a href="/logout" class="sidebar-option"><i class="icon-logout"></i>&nbsp;Cerrar Sesion</a></li>
             </ul>
         </div>

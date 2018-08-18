@@ -32,6 +32,7 @@
                     </div>
                     <br>
                     {{ formset.management_form }}
+                    {{ formse.non_form_errors }}
                     {% for material_form in formset %}
                         <div class="row">
                             <div class = "col-md-2">{{ material_form.nombre.label}} </div>
@@ -106,7 +107,7 @@
     }
     $(document).on('click', '.add-form-row', function(e){
         e.preventDefault();
-        cloneMore('.form-row:last', 'form');
+            cloneMore('.form-row:last', 'form');
         return false;
     });
     $(document).on('click', '.remove-form-row', function(e){

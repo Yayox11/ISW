@@ -68,8 +68,10 @@ class MaterialForm(forms.ModelForm):
 
 MaterialesFormSet = modelformset_factory(
     MaterialSolicitado,
+    extra=1,
     form = MaterialForm,
 )
+
 
 class MyUserCreationForm(UserCreationForm):
     def __init__(self, *args, **kwargs):

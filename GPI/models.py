@@ -170,12 +170,19 @@ class Materiales(models.Model):
 
 
 class SolicitudMaterial(models.Model):
+    ESTADO_CHOICES = (
+        ('recibida','Recibida'),
+        ('no atendida', 'No antendida'),
+        ('en cotización', 'En cotización'),
+        ('en camino', 'En camino'),
+    )
     numero_orden = models.AutoField(primary_key=True)
     fecha_solicitud = models.DateField()
     fecha_requerida = models.DateField()
     fecha_estimada = models.DateField(null=True, blank=True)
     trabajadorobra = models.ForeignKey(TrabajadorObra, on_delete=models.CASCADE)
     obra = models.ForeignKey(Obra, on_delete=models.CASCADE)
+    estado_solicitud = models.CharField(max_length=10, choices=ESTADO_CHOICES)
 
 
 class MaterialSolicitado(models.Model):
@@ -184,12 +191,16 @@ class MaterialSolicitado(models.Model):
         ('normal', 'Normal'),
         ('baja', 'Baja'),
     )
+    RECEPCION_CHOICES = (
+        ('si', 'Si'),
+        ('no', 'No'),
+    )
     nombre = models.CharField(max_length=100)
     cantidad = models.IntegerField()
     urgencia = models.CharField(max_length=10, choices=URGENCIA_CHOICES)
     unidades = models.CharField(max_length=20)
     solicitud = models.ForeignKey(SolicitudMaterial, on_delete=models.CASCADE)
-
+    recibido = models.CharField(max_length=2, choices=RECEPCION_CHOICES)
 
 class OrdenCompra(models.Model):
     fecha = models.DateField()

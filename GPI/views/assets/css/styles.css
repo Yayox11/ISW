@@ -36,7 +36,7 @@
 }
 
 .iconitos {
-  color:purple;
+  color: #800080;
 }
 
 #carita {
@@ -48,7 +48,7 @@
 }
 
 .btn-link:hover {
-  color:purple;
+  color: #800080;
   text-decoration:underline;
   background-color:transparent;
   border-color:transparent;
