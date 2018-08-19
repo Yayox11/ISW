@@ -89,6 +89,8 @@ def SolicitudCreate(request):
 
     return render(request, 'pedido.html',{'solicitud_form': solicitud_form, 'material_form': material_form})
 
+
+@login_required(redirect_field_name='login')
 def ver_pedidos(request):
     obra_trabajador = Obra.objects.filter(bodeguero__user__email=request.user.email).distinct().prefetch_related('bodeguero').order_by('nombre')
     lista_ordenes = []
@@ -96,6 +98,63 @@ def ver_pedidos(request):
         lista_ordenes.append(SolicitudMaterial.objects.filter(obra__nombre=ob).distinct().prefetch_related('obra').order_by('fecha_requerida','fecha_solicitud','obra'))
     return render(request,'ver_pedidos.html',{'ordenes':lista_ordenes})
 
+
+@login_required(redirect_field_name='login')
+def ver_pedidos_central(request):
+    pedidos = list(SolicitudMaterial.objects.filter().order_by('fecha_requerida','fecha_solicitud'))
+    contexto = {'pedidos': pedidos}
+    return render(request, 'ver_all_pedidos.html', contexto)
+
+
+@login_required(redirect_field_name='login')
+def ver_solicitud(request, id_solicitud):
+    solicitud = SolicitudMaterial.objects.get(numero_orden = id_solicitud)
+    materiales = list(MaterialSolicitado.objects.filter(solicitud = solicitud))
+    if request.method =='GET':
+        form = SolicitudForm_edit(instance=solicitud)
+    else:
+        form = SolicitudForm_edit(request.POST, instance=solicitud)
+        if form.is_valid():
+            form.save()
+            return redirect('pedidos_central')
+    contexto = {'solicitud': solicitud, 'materiales': materiales, 'form' : form}
+    return render(request, 'ver_solicitud.html', contexto)
+
+
+@login_required(redirect_field_name='login')
+def material_edit(request, id_material):
+    material = MaterialSolicitado.objects.get(id = id_material)
+    if request.method == 'GET':
+        form = MaterialForm_edit(instance=material)
+    else:
+        form = MaterialForm_edit(request.POST, instance=material)
+        if form.is_valid():
+            form.save()
+            return redirect('ver_solicitud', id_solicitud = material.solicitud.numero_orden)
+    contexto = {'form': form, 'material':material}
+    return render(request, 'material_edit.html', contexto)
+
+
+@login_required(redirect_field_name='login')
+def delete_material(request, id_material):
+    material = MaterialSolicitado.objects.get(id = id_material)
+    id_solicitud1 = material.solicitud.numero_orden
+    if request.method == 'POST':
+        material.delete()
+        return redirect('ver_solicitud', id_solicitud= id_solicitud1)
+    return render(request, 'delete_material.html', {'material':material})
+
+
+@login_required(redirect_field_name='login')
+def delete_solicitud(request, id_solicitud):
+    solicitud = SolicitudMaterial.objects.get(numero_orden=id_solicitud)
+    if request.method == 'POST':
+        solicitud.delete()
+        return redirect('pedidos_central')
+    return render(request, 'delete_solicitud.html',{'solicitud':solicitud})
+
+
+@login_required(redirect_field_name='login')
 def ver_materiales(request):
     if request.method == 'POST':
         stock_form = StockFrom(request.user.email)
@@ -110,6 +169,7 @@ def ver_materiales(request):
     return render(request,'stock.html',{'stock_form':stock_form,'lista_materiaes':[]})
 
 
+@login_required(redirect_field_name='login')
 def Sol_Material(request):
     if request.method == 'POST':
         print("PASO11")
@@ -138,16 +198,20 @@ def Sol_Material(request):
 
 
 
+@login_required(redirect_field_name='login')
 def stock(request):
     return render(request, 'stock.html')
 
+@login_required(redirect_field_name='login')
 def ver_pedido2(request):
     if request.method == 'POST':
         solicitud_form = SolicitudForm(request.POST)
         formset = MaterialesFormSet(request.POST,request.FILES, queryset=MaterialSolicitado.objects.none())
         print("formset_valid :", formset.is_valid())
         print("solicitud_form:", solicitud_form.is_valid())
-        if formset.is_valid() and (len(formset.errors) == 0) and solicitud_form.is_valid():
+        print(formset.errors)
+        print("ERRORES:", len(formset.errors))
+        if formset.is_valid() and (len(formset.errors) == 1) and solicitud_form.is_valid():
             solicitud = solicitud_form.save(commit=False)
             solicitud.trabajadorobra = request.user.trabajadorobra
             solicitud.fecha_solicitud = timezone.now()

@@ -1,0 +1,49 @@
+{% extends "navbar_tables.html" %}
+
+{% block contenido %}
+    <div class="container-fluid">
+    <h2 class="display-4 text-center">Edición material </h2>
+        <h2 class="display-12 text-center">Número de orden asociada: {{ material.solicitud.numero_orden }} </h2>
+        <div class = "contact-clean">
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group text-center align-content-left">
+                <div class="row">
+                    <div class="col-5">{{ form.nombre.label }}</div>
+                    <div class="col-7">{{ form.nombre }}</div>
+                </div>
+            </div>
+            <div class="form-group text-center align-content-left">
+                <div class="row">
+                    <div class="col-5">{{ form.cantidad.label }}</div>
+                    <div class="col-7">{{ form.cantidad }}</div>
+                </div>
+            </div>
+            <div class="form-group text-center align-content-left">
+                <div class="row">
+                    <div class="col-5">{{ form.unidades.label }}</div>
+                    <div class="col-7">{{ form.unidades }}</div>
+                </div>
+            </div>
+            <div class="form-group text-center align-content-center">
+                <div class="row">
+                    <div class="col-5">{{ form.urgencia.label }}</div>
+                    <div class="col-7">{{ form.urgencia }}</div>
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <div class="row">
+                    <div class="col-5">{{ form.recibido.label }}</div>
+                    <div class="col-7">{{ form.recibido }}</div>
+                </div>
+            </div>
+            <div class="form-group text-center">
+                    <button class="btn btn-primary text-center" type="submit">Guardar cambios</button>
+            </div>
+        </form>
+    </div>
+
+
+    </div>
+
+{% endblock %}

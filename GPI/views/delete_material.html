@@ -1,0 +1,51 @@
+{% extends "navbar_tables.html" %}
+
+{% block contenido %}
+
+    <div class = "container">
+
+        <h2 class="display-4 text-center">¿Deseas eleminar el siguiente material? </h2>
+        <hr>
+        <br>
+
+        <div class = "row text-center">
+            <div class="col-5"> <b>Nombre del material:</b> </div>
+            <div class="col-5">{{ material.nombre }}</div>
+        </div>
+        <hr>
+        <div class = "row text-center">
+            <div class="col-5"> <b>Cantidad:</b> </div>
+            <div class="col-5">{{ material.cantidad }}</div>
+        </div>
+        <hr>
+        <div class = "row text-center">
+            <div class="col-5"> <b>Unidades:</b> </div>
+            <div class="col-5">{{ material.unidades }}</div>
+        </div>
+        <hr>
+        <div class = "row text-center">
+            <div class="col-5"> <b>Urgencia:</b> </div>
+            <div class="col-5">{{ material.urgencia }}</div>
+        </div>
+        <hr>
+        <div class = "row text-center">
+            <div class="col-5"> <b>Recibido:</b> </div>
+            <div class="col-5">{{ material.recibido }}</div>
+        </div>
+        <hr>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group text-center">
+                    <button class="btn btn-danger text-center" type="submit">Eliminar</button>
+                    <a class = "btn btn-primary text-center" href="{% url 'ver_solicitud' material.solicitud.numero_orden %}">Cancelar</a>
+            </div>
+
+
+        </form>
+    </div>
+
+
+
+
+
+{% endblock %}

@@ -22,6 +22,27 @@ class SolicitudForm(forms.ModelForm):
             'fecha_requerida': forms.SelectDateWidget(attrs={'class':'form-group'}),
             'obra': forms.Select(attrs={'class':'form-group'}),
        }
+class SolicitudForm_edit(forms.ModelForm):
+    class Meta:
+        model = SolicitudMaterial
+        fields = [
+            'fecha_requerida',
+            'fecha_estimada',
+            'obra',
+            'estado_solicitud',
+        ]
+        labels = {
+            'fecha_requerida': 'Fecha requerida',
+            'fecha_estimada':   'Fecha_estimada',
+            'obra': 'Obra',
+            'estado_solicitud':'Estado_solicitud',
+        }
+        widgets = {
+            'fecha_requerida': forms.SelectDateWidget(attrs={'class': 'form-group'}),
+            'fecha_estimada': forms.SelectDateWidget(attrs={'class': 'form-group'}),
+            'obra': forms.Select(attrs={'class': 'form-group'}),
+            'estado_solicitud': forms.Select(attrs={'class': 'form-group'})
+        }
 
 class StockFrom(forms.ModelForm):
     class Meta:
@@ -40,6 +61,7 @@ class StockFrom(forms.ModelForm):
     def __init__(self, user, *args, **kwargs):
         super(StockFrom, self).__init__(*args, **kwargs)
         self.fields['obra'].queryset = Obra.objects.filter(Q(bodeguero__user__email=user) | Q(trabajadorobra__user__email = user))
+
 
 class MaterialForm(forms.ModelForm):
     class Meta:
@@ -71,6 +93,29 @@ MaterialesFormSet = modelformset_factory(
     extra=1,
     form = MaterialForm,
 )
+
+class MaterialForm_edit(forms.ModelForm):
+    class Meta:
+        model = MaterialSolicitado
+        fields = [
+            'nombre',
+            'cantidad',
+            'unidades',
+            'urgencia',
+            'recibido',
+        ]
+        labels = {
+            'nombre': 'Nombre del material',
+            'cantidad': 'Cantidad',
+            'unidades': 'Unidades de medida',
+            'urgencia': 'Urgencia',
+            'recibido': 'Recepción del material'
+        }
+        widgets = {
+            'nombre': forms.TextInput(attrs={'class': 'form-group'}),
+            'cantidad': forms.NumberInput(attrs={'class': 'form-group'}),
+            'unidades': forms.TextInput(attrs={'class': 'form-froup'}),
+        }
 
 
 class MyUserCreationForm(UserCreationForm):

@@ -1,0 +1,52 @@
+{% extends "navbar_tables.html"%}
+{% block contenido %}
+    <div class = "container">
+
+        <h2 class="display-4 text-center">¿Deseas eleminar la siguiente solicitud? </h2>
+        <hr>
+        <br>
+
+        <div class = "row text-center">
+            <div class="col-5"> <b>Número de solcitud:</b> </div>
+            <div class="col-5">{{ solicitud.numero_orden }}</div>
+        </div>
+        <hr>
+        <div class = "row text-center">
+            <div class="col-5"> <b>Solicitado por:</b> </div>
+            <div class="col-5">{{ solicitud.trabajadorobra }}</div>
+        </div>
+        <hr>
+        <div class = "row text-center">
+            <div class="col-5"> <b>Fecha solicitud:</b> </div>
+            <div class="col-5">{{ solicitud.fecha_solicitud }}</div>
+        </div>
+        <hr>
+        <div class = "row text-center">
+            <div class="col-5"> <b>Fecha requerida:</b> </div>
+            <div class="col-5">{{ solicitud.fecha_requerida }}</div>
+        </div>
+        <hr>
+        <div class = "row text-center">
+            <div class="col-5"> <b>Fecha estimada:</b> </div>
+            <div class="col-5">{{ solicitud.obra }}</div>
+        </div>
+        <hr>
+
+        <div class = "row text-center">
+            <div class="col-5"> <b> Estado:</b> </div>
+            <div class="col-5">{{ solicitud.estado_solicitud }}</div>
+        </div>
+        <hr>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group text-center">
+                    <button class="btn btn-danger text-center" type="submit">Eliminar</button>
+                    <a class = "btn btn-primary text-center" href="{% url 'pedidos_central' %}">Cancelar</a>
+            </div>
+
+
+        </form>
+    </div>
+
+
+{% endblock %}
