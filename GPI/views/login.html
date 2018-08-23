@@ -1,7 +1,10 @@
 {% extends 'head.html' %}
 
 {% block body %}
-   <nav class="navbar navbar-light navbar-expand-md", style="background-color: #800080">
+    <div>
+        <img id = "background"  alt title />
+    </div>
+   <nav class="navbar navbar-light navbar-expand-md", style="background-color: rgba(1,1,11,0.26)">
         <div class="container-fluid"><a class="navbar-brand"><strong>GPI</strong></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse topnav"
                 id="navcol-1">
@@ -20,8 +23,10 @@
     {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
+<body>
 
-        <div class="container">
+
+ <div class="container">
         <div class="card card-container">
             <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
             <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
@@ -41,4 +46,8 @@
             </form><!-- /form -->
         </div><!-- /card-container -->
     </div><!-- /container -->
+
+
+</body>
+
 {% endblock %}
