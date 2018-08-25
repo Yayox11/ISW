@@ -1,0 +1,83 @@
+{% extends 'navbar.html' %}
+
+{% block contenido %}
+    <h1 class="display-3 text-center"> Registro de Usuarios</h1>
+    <div class="contact-clean" >
+        <form method="post">
+            {% csrf_token %}
+            <div class = "form-group">
+                <div class="row">
+                    <div class="col-5 text-left">
+                        <label>{{ user_form.first_name.label }}</label>
+                    </div>
+
+                    <div class="col-7 text-left align-content-left">
+                        {{ user_form.first_name }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                 <div class="row">
+                    <div class="col-5 text-left">
+                        <label>{{ user_form.second_name.label }}</label>
+                    </div>
+                    <div class="col-7 text-left align-content-left">
+                        {{ user_form.second_name }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group text-left align-content-left">
+                <div class="row">
+                    <div class="col-5">
+                        <label>{{ user_form.apellido_paterno.label }}</label>
+                    </div>
+                    <div class="col-7">
+                        {{ user_form.apellido_paterno }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group text-left align-content-left">
+                <div class="row">
+                    <div class="col-5">
+                        <label>{{ user_form.apellido_materno.label }}</label>
+                    </div>
+                    <div class="col-7">
+                        {{ user_form.apellido_materno }}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group text-left align-content-left">
+                <div class="row">
+                    <div class="col-5">
+                        <label>{{ user_form.email.label }}</label>
+                    </div>
+                    <div class="col-7">
+                        {{ user_form.email }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group text-left align-content-left">
+                <div class="row">
+                    <div class="col-5">
+                        <label>{{ user_form.rut.label }}</label>
+                    </div>
+                    <div class="col-7">
+                        {{ user_form.rut }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group text-center">
+                <!--<button class="btn btn-primary text-center" type="submit" name="agregar">Agregar pedido</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Ver pedidos</button>-->
+
+            </div>
+        <div class="form-group text-center">
+            <button class="btn btn-primary text-center" type="submit" name="enviar">Registrar usuario</button>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}

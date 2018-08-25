@@ -24,19 +24,19 @@
 }
 
 .topnav a:hover {
-  border-bottom:3px solid purple;
+  border-bottom:3px solid rgba(255, 215, 22, 0.99);
 }
 
 .topnav a.activate {
-  border-bottom:3px solid purple;
+  border-bottom:3px solid rgba(255, 215, 22, 0.99);
 }
 
 .sidebar-option:hover {
-  border-bottom:3px solid purple;
+  border-bottom:3px solid rgba(255, 215, 22, 0.99);
 }
 
 .iconitos {
-  color: #800080;
+  color: #ffa801;
 }
 
 #carita {
@@ -48,7 +48,7 @@
 }
 
 .btn-link:hover {
-  color: #800080;
+  color: rgba(255, 215, 22, 0.99);
   text-decoration:underline;
   background-color:transparent;
   border-color:transparent;
