@@ -10,25 +10,30 @@
 
                     </div>
 
+                <div class="alert alert-secondary text-center" role="alert">
                     <form class="form-horizontal" method="POST" action="">
                         {% csrf_token %}
+                    <div class="alert alert-danger text-center" role="alert">
+                    <h5 class="alert-heading">Recuerde ingresar fecha y obra</h5>
+                    <hr>
                     <div class="row spacer">
+                        <div class="col-md-2"></div>
                         <div class="col-md-2">
                             <label>{{ solicitud_form.fecha_requerida.label }}</label>
                         </div>
-
                         <div class="col-md-3 text-left align-content-left">
                             {% load i18n %}
                             {% language 'es' %}
                             {{ solicitud_form.fecha_requerida }}
                             {% endlanguage %}
                         </div>
-                        <div class="col-1 text-left">
+                        <div class="col-1 text-center">
                             <label>{{ solicitud_form.obra.label }}</label>
                         </div>
-                        <div class="col-2 text-left align-content-left">
+                        <div class="col-1 text-center">
                             {{ solicitud_form.obra }}
                         </div>
+                    </div>
                     </div>
                     <br>
                     {{ formset.management_form }}
@@ -36,26 +41,34 @@
                     {% for material_form in formset %}
                         <div class="row">
                             <div class = "col-md-2">{{ material_form.nombre.label}} </div>
+                            <div class="col-md-1"></div>
                             <div class = "col-md-2">{{ material_form.cantidad.label}} </div>
+                            <div class="col-md-1"></div>
                             <div class = "col-md-2">{{ material_form.unidades.label}} </div>
+                            <div class="col-md-1"></div>
                             <div class = "col-md-2">{{ material_form.urgencia.label}} </div>
 
                         </div>
                     <div class="row form-row spacer">
                             <div class = "col-md-2">{{ material_form.nombre}} </div>
+                            <div class="col-md-1"></div>
                             <div class = "col-md-2">{{ material_form.cantidad}} </div>
+                            <div class="col-md-1"></div>
                             <div class = "col-md-2">{{ material_form.unidades}} </div>
+                            <div class="col-md-1"></div>
                             <div class = "col-md-2">{{ material_form.urgencia}} </div>
-                            <div class = "col-md-2 text-lg-left"><button class="btn btn-success add-form-row">+</button></div>
+                            <div class = "col-md-1 text-center"><button class="btn btn-success add-form-row">+</button></div>
                     </div>
                     {% endfor %}
                     <div class="row spacer">
-                        <div class = "col-md-2"></div>
-                        <div class="col-md-2 text-center">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4 text-center">
                             <button type="submit" class="btn btn-block btn-primary">Enviar Solicitud</button>
                         </div>
+                        <div class="col-md-4"></div>
                     </div>
                     </form>
+                </div>
                 </div>
 
 {% endblock %}
