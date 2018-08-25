@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7321707-fce1-4b96-bfd4-720e80d1ee20" name="Default" comment="" />
+    <list default="true" id="e7321707-fce1-4b96-bfd4-720e80d1ee20" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GPI/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/GPI/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GPI/views/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/GPI/views/navbar.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,68 +21,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Proyecto/settings.py">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GPI/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1290">
-              <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
-              <folding>
-                <element signature="e#309#318#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2790">
+              <caret line="190" column="29" lean-forward="true" selection-start-line="190" selection-start-column="29" selection-end-line="190" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GPI/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2085">
-              <caret line="148" selection-start-line="148" selection-end-line="148" />
+            <state relative-caret-position="433">
+              <caret line="190" column="59" selection-start-line="190" selection-start-column="59" selection-end-line="190" selection-end-column="59" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GPI/urls.py">
+      <file leaf-file-name="pedido2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GPI/views/pedido2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="21" column="71" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pedido.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GPI/views/pedido.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stock.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GPI/views/stock.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ver_pedidos.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GPI/views/ver_pedidos.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="navbar_pedidos.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GPI/views/navbar_pedidos.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
-              <caret line="67" column="7" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
+            <state relative-caret-position="1217">
+              <caret line="86" column="53" lean-forward="true" selection-start-line="86" selection-start-column="53" selection-end-line="86" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -140,16 +105,16 @@
         <option value="$PROJECT_DIR$/GPI/views/ver_all_pedidos.html" />
         <option value="$PROJECT_DIR$/GPI/views/delete_solicitud.html" />
         <option value="$PROJECT_DIR$/GPI/views/delete_material.html" />
-        <option value="$PROJECT_DIR$/GPI/views/navbar.html" />
-        <option value="$PROJECT_DIR$/GPI/views/navbar_tables.html" />
         <option value="$PROJECT_DIR$/GPI/views/login.html" />
         <option value="$PROJECT_DIR$/GPI/views/assets/css/login.css" />
         <option value="$PROJECT_DIR$/GPI/views/assets/css/styles.css" />
         <option value="$PROJECT_DIR$/GPI/forms.py" />
         <option value="$PROJECT_DIR$/GPI/views/pedido.html" />
-        <option value="$PROJECT_DIR$/GPI/views.py" />
         <option value="$PROJECT_DIR$/GPI/urls.py" />
         <option value="$PROJECT_DIR$/GPI/views/create_user.html" />
+        <option value="$PROJECT_DIR$/GPI/views/navbar_tables.html" />
+        <option value="$PROJECT_DIR$/GPI/views/navbar.html" />
+        <option value="$PROJECT_DIR$/GPI/views.py" />
       </list>
     </option>
   </component>
@@ -219,6 +184,12 @@
               <item name="ISW" type="b2602c69:ProjectViewProjectNode" />
               <item name="ISW" type="462c0819:PsiDirectoryNode" />
               <item name="GPI" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ISW" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ISW" type="462c0819:PsiDirectoryNode" />
+              <item name="GPI" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -227,22 +198,6 @@
               <item name="GPI" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ISW" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISW" type="462c0819:PsiDirectoryNode" />
-              <item name="GPI" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ISW" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ISW" type="462c0819:PsiDirectoryNode" />
-              <item name="GPI" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ISW" type="b2602c69:ProjectViewProjectNode" />
@@ -468,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1534989961926</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Multiple form">
+      <created>1535228929032</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1535228929032</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView">
@@ -481,51 +443,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5060514" side_tool="true" weight="0.22749591" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.24725275" side_tool="true" visible="true" weight="0.23384616" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.60927963" weight="0.3271795" />
       <window_info anchor="bottom" id="Python Console" order="9" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49394855" visible="true" weight="0.18424243" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17525035" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="right" id="SciView" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.75274724" visible="true" weight="0.23384616" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4908425" weight="0.22051282" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8053777" visible="true" weight="0.21001221" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="right" id="R Packages" order="3" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8053777" visible="true" weight="0.2074392" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
+      <window_info id="Structure" order="1" sideWeight="0.19462228" side_tool="true" weight="0.16727717" />
+      <window_info id="Favorites" order="2" sideWeight="0.5014493" side_tool="true" weight="0.13006397" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4993895" weight="0.4" />
+      <window_info anchor="right" id="R Graphics" order="3" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32897604" />
-      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.60927963" weight="0.3271795" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7539342" visible="true" weight="0.2339394" />
-      <window_info anchor="right" id="R Graphics" order="3" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info id="Structure" order="1" sideWeight="0.19462228" side_tool="true" weight="0.16727717" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.24606581" side_tool="true" visible="true" weight="0.2339394" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" sideWeight="0.5014493" side_tool="true" weight="0.13006397" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4908425" weight="0.22051282" />
-      <window_info anchor="bottom" id="Python Console" order="9" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.60927963" weight="0.3271795" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info id="Favorites" order="2" sideWeight="0.5014493" side_tool="true" weight="0.13006397" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8053777" visible="true" weight="0.16727717" />
       <window_info id="Structure" order="1" sideWeight="0.19462228" side_tool="true" visible="true" weight="0.16727717" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -534,17 +484,16 @@
       <window_info anchor="right" id="R Graphics" order="4" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7557998" visible="true" weight="0.19897436" />
       <window_info anchor="right" id="R Packages" order="5" />
-      <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4908425" weight="0.22051282" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.24420024" side_tool="true" visible="true" weight="0.19897436" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.60927963" weight="0.3271795" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="Database" order="6" />
-      <window_info id="Favorites" order="2" sideWeight="0.5014493" side_tool="true" weight="0.13006397" />
+      <window_info anchor="bottom" id="Python Console" order="11" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -682,13 +631,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GPI/views/navbar_pedido.html" />
-    <entry file="file://$PROJECT_DIR$/GPI/views/assets/js/ver_pedido2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="11" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GPI/views/assets/css/tables.css">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -713,30 +655,6 @@
     <entry file="file://$PROJECT_DIR$/GPI/views/assets/bootstrap/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-765" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proyecto/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="86" column="1" selection-start-line="86" selection-start-column="1" selection-end-line="86" selection-end-column="1" />
-          <folding>
-            <element signature="e#309#318#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/views/ver_pedidos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/views/navbar_pedidos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="67" column="7" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GPI/views/material_edit.html">
@@ -774,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/views/navbar_tables.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="75" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GPI/views/head.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -788,24 +699,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/views/pedido2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="48" selection-start-line="34" selection-start-column="48" selection-end-line="34" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GPI/views/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/views/navbar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="36" column="75" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
         </state>
       </provider>
     </entry>
@@ -828,13 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/views/loggedin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GPI/views/assets/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -847,31 +737,10 @@
         <state relative-caret-position="-1122" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="182" column="80" selection-start-line="182" selection-start-column="80" selection-end-line="182" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GPI/views/pedido.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="49" selection-start-line="13" selection-start-column="49" selection-end-line="13" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2085">
-          <caret line="148" selection-start-line="148" selection-end-line="148" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="21" column="71" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
         </state>
       </provider>
     </entry>
@@ -896,17 +765,97 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/views/create_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GPI/views/stock.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
           <caret line="47" column="40" selection-start-line="47" selection-start-column="40" selection-end-line="47" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPI/views/create_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-575">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proyecto/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="86" column="1" selection-start-line="86" selection-end-line="86" selection-end-column="1" />
+          <folding>
+            <element signature="e#309#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPI/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="71" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPI/views/assets/js/ver_pedido2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="59" column="11" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPI/views/ver_pedidos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPI/views/navbar_pedidos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="67" column="7" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPI/views/navbar_tables.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="35" column="38" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPI/views/loggedin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPI/views/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="14" lean-forward="true" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPI/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2790">
+          <caret line="190" column="29" lean-forward="true" selection-start-line="190" selection-start-column="29" selection-end-line="190" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPI/views/pedido2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1217">
+          <caret line="86" column="53" lean-forward="true" selection-start-line="86" selection-start-column="53" selection-end-line="86" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPI/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="190" column="59" selection-start-line="190" selection-start-column="59" selection-end-line="190" selection-end-column="59" />
         </state>
       </provider>
     </entry>

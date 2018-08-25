@@ -188,7 +188,7 @@ def ver_pedido2(request):
         print("solicitud_form:", solicitud_form.is_valid())
         print(formset.errors)
         print("ERRORES:", len(formset.errors))
-        if formset.is_valid() and (len(formset.errors) == 1) and solicitud_form.is_valid():
+        if formset.is_valid() and solicitud_form.is_valid():
             solicitud = solicitud_form.save(commit=False)
             solicitud.trabajadorobra = request.user.trabajadorobra
             solicitud.fecha_solicitud = timezone.now()
