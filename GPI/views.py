@@ -1,13 +1,12 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpResponseRedirect
-from GPI.models import *
-from django.views.generic import ListView, CreateView, FormView, TemplateView, RedirectView
 from django.contrib import auth
-from GPI.forms import *
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
 from django.utils import timezone
-import pickle
-from django.forms.models import model_to_dict
+
+from GPI.forms import *
+import odoo as od
+
 
 # Create your views here.
 
@@ -212,6 +211,16 @@ def ver_pedido2(request):
     return render(request, 'pedido2.html',{'solicitud_form': solicitud_form, 'formset': formset})
 
 @login_required(redirect_field_name='login')
+def upd_stock(request):
+    lista=[]
+    odoo_conection = od.ODOO()
+    #odoo_conection = od._init_(self, url="https://drusq.odoo.com",db="drusq", username="cgardillacurada7@gmail.com",password="120696")
+    odoo_conection._init_(url="https://drusq.odoo.com",db="drusq", username="cgardillacurada7@gmail.com",password="120696")
+    odoo_conection.connect()
+    #odoo_conection.search("purchase.order",lista)
+    return render(request, 'odoo_sol.html',{"lista" : odoo_conection.search("purchase.order",lista) })
+
+@login_required(redirect_field_name='login')   
 def CreateUsuario(request):
     if request.method == 'POST':
         user_form = UserCreateForm(request.POST)
