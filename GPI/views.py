@@ -61,27 +61,6 @@ def SolicitudCreate(request):
             material.save()
             return HttpResponseRedirect('loggedin')
 
-        ''''
-        if "enviar" in request.POST and dict_elementos.__len__() != 0:
-            for element in dict_elementos.values():
-                element[1].save()
-                element[0].solicitud = element[1]
-                element[0].save()
-            solicitud_form = SolicitudForm()
-            material_form = MaterialForm()
-            return render(request, 'pedido.html', {'solicitud_form': solicitud_form, 'material_form': material_form})
-        elif 'agregar' in request.POST:
-            if solicitud_form.is_valid() and material_form.is_valid():
-                material = material_form.save(commit=False)
-                solicitud = solicitud_form.save(commit=False)
-                solicitud.trabajadorobra = request.user.trabajadorobra
-                solicitud.fecha_solicitud = timezone.now()
-                dict_elementos[material_form.cleaned_data['nombre']]=(material,solicitud)
-                dict_html[material_form.cleaned_data['nombre']] = (material_form.cleaned_data['nombre'],material_form.cleaned_data['cantidad'],solicitud_form.cleaned_data['fecha_requerida'],material_form.cleaned_data['urgencia'])
-                solicitud_form = SolicitudForm()
-                material_form = MaterialForm()
-                return render(request, 'pedido.html',{'solicitud_form': solicitud_form, 'material_form': material_form, 'items' : dict_html.values()})
-    '''
     else:
         solicitud_form = SolicitudForm()
         material_form = MaterialForm()
@@ -195,8 +174,6 @@ def Sol_Material(request):
     return render(request, 'pedido2.html',{'solicitud_form': solicitud_form, 'formset': formset})
 
 
-
-
 @login_required(redirect_field_name='login')
 def stock(request):
     return render(request, 'stock.html')
@@ -242,3 +219,13 @@ def upd_stock(request):
     odoo_conection.connect()
     #odoo_conection.search("purchase.order",lista)
     return render(request, 'odoo_sol.html',{"lista" : odoo_conection.search("purchase.order",lista) })
+
+@login_required(redirect_field_name='login')   
+def CreateUsuario(request):
+    if request.method == 'POST':
+        user_form = UserCreateForm(request.POST)
+        if user_form.is_valid():
+            x = 0
+    else:
+        user_form = UserCreateForm()
+    return render(request, 'create_user.html', {'user_form': user_form})

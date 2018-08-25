@@ -127,7 +127,32 @@ class MyUserCreationForm(UserCreationForm):
         model = MyUser
         fields = ("email",)
 
-
+class UserCreateForm(forms.ModelForm):
+    class Meta:
+        model = MyUser
+        fields = [
+            'first_name',
+            'second_name',
+            'apellido_materno',
+            'apellido_paterno',
+            'email',
+            'rut',
+        ]
+        labels = {
+            'first_name': 'Primer nombre',
+            'second_name': 'Segundo nombre',
+            'apellido_paterno': 'Apellido paterno',
+            'apellido_materno': 'Apellido materno',
+            'rut': 'Rut',
+            'email': 'Email',
+        }
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'form-group'}),
+            'second_name': forms.TextInput(attrs={'class': 'form-group'}),
+            'apellido_paterno': forms.TextInput(attrs={'class': 'form-group'}),
+            'apellido_materno': forms.TextInput(attrs={'class': 'form-group'}),
+            'email': forms.EmailInput(attrs={'class': 'form-group'}),
+        }
 ##class MyUserChangeForm(UserChangeForm):
     ##def __init__(self, *args, **kwargs):
         ##super(MyUserChangeForm, self).__init__(*args, **kwargs)
