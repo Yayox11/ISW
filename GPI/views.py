@@ -150,7 +150,7 @@ def ver_materiales(request):
 @login_required(redirect_field_name='login')
 def Sol_Material(request):
     if request.method == 'POST':
-        print("PASO11")
+        print("sdadsadsadasPASO11")
         solicitud_form = SolicitudForm(request.POST)
         formset = MaterialesFormSet(request.POST, request.FILES,queryset=MaterialSolicitado.objects.none())
         print("formset_valid :", formset.is_valid())
@@ -184,11 +184,13 @@ def ver_pedido2(request):
         solicitud_form = SolicitudForm(request.POST)
         formset = MaterialesFormSet(request.POST,request.FILES, queryset=MaterialSolicitado.objects.none())
         print("formset_valid :", formset.is_valid())
+        print("formset error", solicitud_form.errors)
         print("solicitud_form:", solicitud_form.is_valid())
         print(formset.errors)
         print("ERRORES:", len(formset.errors))
         if formset.is_valid() and solicitud_form.is_valid():
             solicitud = solicitud_form.save(commit=False)
+            print("FECHA:", solicitud.fecha_requerida)
             solicitud.trabajadorobra = request.user.trabajadorobra
             solicitud.fecha_solicitud = timezone.now()
 

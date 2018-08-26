@@ -22,7 +22,7 @@ class SolicitudForm(forms.ModelForm):
         }
 
        widgets = {
-            'fecha_requerida': forms.DateInput(attrs={'class':'datepicker','autocomplete':'off','placeholder':'Seleccione una fecha'}),
+            'fecha_requerida': forms.DateInput(format='%Y-%m-%d',attrs={'class':'datepicker','autocomplete':'off','placeholder':'Seleccione una fecha'}),
             'obra': forms.Select(attrs={'class':'form-group'}),
        }
 class SolicitudForm_edit(forms.ModelForm):

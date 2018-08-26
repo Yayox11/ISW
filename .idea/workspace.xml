@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e7321707-fce1-4b96-bfd4-720e80d1ee20" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GPI/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/GPI/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/GPI/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/GPI/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GPI/views/navbar_pedidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/GPI/views/navbar_pedidos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GPI/views/pedido2.html" beforeDir="false" afterPath="$PROJECT_DIR$/GPI/views/pedido2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GPI/views/assets/js/date_idioma.js" beforeDir="false" afterPath="$PROJECT_DIR$/GPI/views/assets/js/date_idioma.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GPI/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="157" column="29" selection-start-line="157" selection-start-column="29" selection-end-line="157" selection-end-column="29" />
+            <state relative-caret-position="1119">
+              <caret line="192" column="53" selection-start-line="192" selection-start-column="53" selection-end-line="192" selection-end-column="53" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -49,8 +49,8 @@
       <file leaf-file-name="pedido2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GPI/views/pedido2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1095">
-              <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
+            <state>
+              <caret column="9" lean-forward="true" selection-start-column="9" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -58,26 +58,17 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GPI/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2730">
-              <caret line="186" column="32" selection-start-line="186" selection-start-column="32" selection-end-line="186" selection-end-column="32" />
+            <state>
+              <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar_pedidos.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GPI/views/navbar_pedidos.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="688">
-              <caret line="77" column="21" lean-forward="true" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="date_idioma.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="date_idioma.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GPI/views/assets/js/date_idioma.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="76" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
+            <state relative-caret-position="405">
+              <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -85,23 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ver_pedido2.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GPI/views/assets/js/ver_pedido2.js">
+      <file leaf-file-name="navbar_pedidos.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GPI/views/navbar_pedidos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="763">
-              <caret line="59" column="11" lean-forward="true" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GPI/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="84" selection-start-line="44" selection-start-column="84" selection-end-line="44" selection-end-column="84" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="327">
+              <caret line="24" column="59" selection-start-line="24" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -109,8 +88,20 @@
       <file leaf-file-name="navbar_tables.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GPI/views/navbar_tables.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="71" column="68" lean-forward="true" selection-start-line="66" selection-start-column="3" selection-end-line="71" selection-end-column="68" />
+            <state>
+              <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GPI/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-end-line="25" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -175,14 +166,14 @@
         <option value="$PROJECT_DIR$/GPI/views/create_user.html" />
         <option value="$PROJECT_DIR$/GPI/models.py" />
         <option value="$PROJECT_DIR$/GPI/views/navbar_tables.html" />
-        <option value="$PROJECT_DIR$/GPI/forms.py" />
         <option value="$PROJECT_DIR$/GPI/views/ver_solicitud.html" />
-        <option value="$PROJECT_DIR$/GPI/views/assets/js/date_idioma.js" />
         <option value="$PROJECT_DIR$/Proyecto/settings.py" />
         <option value="$PROJECT_DIR$/GPI/views/assets/js/ver_pedido2.js" />
-        <option value="$PROJECT_DIR$/GPI/views/navbar_pedidos.html" />
         <option value="$PROJECT_DIR$/GPI/views/pedido2.html" />
         <option value="$PROJECT_DIR$/GPI/views.py" />
+        <option value="$PROJECT_DIR$/GPI/forms.py" />
+        <option value="$PROJECT_DIR$/GPI/views/navbar_pedidos.html" />
+        <option value="$PROJECT_DIR$/GPI/views/assets/js/date_idioma.js" />
       </list>
     </option>
   </component>
@@ -709,7 +700,14 @@
       <option name="project" value="LOCAL" />
       <updated>1535254187494</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Gestion de usuarios completa">
+      <created>1535257883026</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1535257883026</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TodoView">
@@ -726,11 +724,11 @@
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.498779" weight="0.32923076" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.36568987" side_tool="true" visible="true" weight="0.07692308" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.36568987" side_tool="true" visible="true" weight="0.26871794" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.4993895" weight="0.32820514" />
       <window_info anchor="bottom" id="Python Console" order="8" sideWeight="0.8015873" weight="0.32923076" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6343101" visible="true" weight="0.07692308" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6343101" visible="true" weight="0.26871794" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.490232" weight="0.23282051" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49923664" visible="true" weight="0.17338218" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -1091,34 +1089,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GPI/views/assets/js/ver_pedido2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="763">
+          <caret line="59" column="11" lean-forward="true" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPI/views/navbar_tables.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" lean-forward="true" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GPI/views/pedido2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="9" lean-forward="true" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GPI/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2730">
-          <caret line="186" column="32" selection-start-line="186" selection-start-column="32" selection-end-line="186" selection-end-column="32" />
+        <state>
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GPI/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="84" selection-start-line="44" selection-start-column="84" selection-end-line="44" selection-end-column="84" />
+        <state relative-caret-position="360">
+          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-end-line="25" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/views/navbar_tables.html">
+    <entry file="file://$PROJECT_DIR$/GPI/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="71" column="68" lean-forward="true" selection-start-line="66" selection-start-column="3" selection-end-line="71" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/views/assets/js/ver_pedido2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="763">
-          <caret line="59" column="11" lean-forward="true" selection-start-line="59" selection-start-column="11" selection-end-line="59" selection-end-column="11" />
+        <state relative-caret-position="1119">
+          <caret line="192" column="53" selection-start-line="192" selection-start-column="53" selection-end-line="192" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1129,36 +1144,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/views/assets/js/date_idioma.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="76" selection-start-line="23" selection-start-column="76" selection-end-line="23" selection-end-column="76" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GPI/views/navbar_pedidos.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="688">
-          <caret line="77" column="21" lean-forward="true" selection-start-line="77" selection-start-column="21" selection-end-line="77" selection-end-column="21" />
+        <state relative-caret-position="327">
+          <caret line="24" column="59" selection-start-line="24" selection-end-line="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/views/pedido2.html">
+    <entry file="file://$PROJECT_DIR$/GPI/views/assets/js/date_idioma.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="73" column="14" selection-start-line="73" selection-start-column="14" selection-end-line="73" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GPI/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="157" column="29" selection-start-line="157" selection-start-column="29" selection-end-line="157" selection-end-column="29" />
+        <state relative-caret-position="405">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
