@@ -27,6 +27,8 @@
     <orderEntry type="library" name="R User Library" level="project" />
     <orderEntry type="library" name="R Skeletons" level="application" />
     <orderEntry type="library" name="jquery-3.2.1.slim" level="application" />
+    <orderEntry type="library" name="jquery-1.12.4" level="application" />
+    <orderEntry type="library" name="jquery-ui" level="application" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Django" />

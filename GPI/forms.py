@@ -3,7 +3,10 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from GPI.models import *
 from django.db.models import Q
 from django.forms import modelformset_factory
+import datetime
 from django.contrib.admin.widgets import AdminDateWidget
+
+
 
 class SolicitudForm(forms.ModelForm):
    class Meta:
@@ -19,7 +22,7 @@ class SolicitudForm(forms.ModelForm):
         }
 
        widgets = {
-            'fecha_requerida': forms.SelectDateWidget(attrs={'class':'form-group'}),
+            'fecha_requerida': forms.DateInput(attrs={'class':'datepicker'}),
             'obra': forms.Select(attrs={'class':'form-group'}),
        }
 class SolicitudForm_edit(forms.ModelForm):
