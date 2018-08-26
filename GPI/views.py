@@ -229,3 +229,4 @@ def CreateUsuario(request):
     else:
         user_form = UserCreateForm()
     return render(request, 'create_user.html', {'user_form': user_form})
+

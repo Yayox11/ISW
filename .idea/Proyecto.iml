@@ -18,7 +18,7 @@
       <sourceFolder url="file://$MODULE_DIR$/GPI" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/GPI/views" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.6.4 (C:\Users\Usuario\AppData\Local\Programs\Python\Python36-32\python.exe)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.6 (ISW)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="jquery.dataTables" level="application" />
     <orderEntry type="library" name="dataTables.bootstrap4" level="application" />
