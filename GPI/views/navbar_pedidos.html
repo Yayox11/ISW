@@ -71,10 +71,13 @@
         {% endblock %}
     </div>
     {% block scripts %}
+
     <script src=" {% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src=" {% static 'assets/js/Sidebar-Menu.js' %}"></script>
-    <script src="{% static 'assets/js/ver_pedido2.js' %}"></script>
     {% endblock %}
+{% block custom_js %}
+
+{% endblock %}
 
 </body>
 </html>

@@ -155,7 +155,7 @@ def Sol_Material(request):
         formset = MaterialesFormSet(request.POST, request.FILES,queryset=MaterialSolicitado.objects.none())
         print("formset_valid :", formset.is_valid())
         print("solicitud_form:", solicitud_form.is_valid())
-        if formset.is_valid() and (len(formset.errors) == 0) and solicitud_form.is_valid():
+        if formset.is_valid() and solicitud_form.is_valid():
             print("formset errors:", formset.errors)
             print("PASO")
             solicitud = solicitud_form.save(commit=False)
