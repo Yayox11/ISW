@@ -1,6 +1,34 @@
-{% extends 'head.html' %}
+{% extends 'navbar_pedidos.html' %}
 
-{{% block body %}
-Hola
-    <div>{{ lista }}</div>
+{{% block contenido %}
+    <div class="container">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <table id="example" class="table table-striped table-bordered text-center" style="width:100%">
+              <thead>
+                <tr>
+                    <th scope="col">Partner</th>
+                    <th scope="col">notes</th>
+                    <th scope="col">id</th>
+                    <th scope="col">order_line</th>
+                    <th scope="col">state</th>
+                    <th scope="col">amount_total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in lista %}
+                    <tr>
+                        <td>{{ item.partner_id.1 }}</td>
+                        <td>{{ item.notes }}</td>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.order_line.0 }}</td>
+                        <td>{{ item.state }}</td>
+                        <td>{{ item.amount_total }}</td>
+                    </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
 {% endblock %}
