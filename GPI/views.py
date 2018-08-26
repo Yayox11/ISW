@@ -1,15 +1,28 @@
 from django.contrib import auth
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.utils import timezone
 
 from GPI.forms import *
-import odoo as od
+from odoo import *
 
 
 # Create your views here.
+def admin_check(user):
+    return user.is_admin
 
+def bodeguero_check(user):
+    return user.is_bodeguero
+
+def encargado_compras_check(user):
+    return user.is_encargado_compras
+
+def trabajador_obra_check(user):
+    return user.is_trabajador_obra
+
+def trabajador_bodeguero_check(user):
+    return (user.is_bodeguero or user.is_trabajador_obra or user.is_admin)
 
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
@@ -67,8 +80,8 @@ def SolicitudCreate(request):
 
     return render(request, 'pedido.html',{'solicitud_form': solicitud_form, 'material_form': material_form})
 
-
 @login_required(redirect_field_name='login')
+@user_passes_test(trabajador_bodeguero_check, login_url= 'loggedin')
 def ver_pedidos(request):
     obra_trabajador = Obra.objects.filter(bodeguero__user__email=request.user.email).distinct().prefetch_related('bodeguero').order_by('nombre')
     lista_ordenes = []
@@ -76,15 +89,15 @@ def ver_pedidos(request):
         lista_ordenes.append(SolicitudMaterial.objects.filter(obra__nombre=ob).distinct().prefetch_related('obra').order_by('fecha_requerida','fecha_solicitud','obra'))
     return render(request,'ver_pedidos.html',{'ordenes':lista_ordenes})
 
-
 @login_required(redirect_field_name='login')
+@user_passes_test(admin_check, login_url= 'loggedin')
 def ver_pedidos_central(request):
     pedidos = list(SolicitudMaterial.objects.filter().order_by('fecha_requerida','fecha_solicitud'))
     contexto = {'pedidos': pedidos}
     return render(request, 'ver_all_pedidos.html', contexto)
 
-
 @login_required(redirect_field_name='login')
+@user_passes_test(admin_check, login_url='loggedin')
 def ver_solicitud(request, id_solicitud):
     solicitud = SolicitudMaterial.objects.get(numero_orden = id_solicitud)
     materiales = list(MaterialSolicitado.objects.filter(solicitud = solicitud))
@@ -98,8 +111,8 @@ def ver_solicitud(request, id_solicitud):
     contexto = {'solicitud': solicitud, 'materiales': materiales, 'form' : form}
     return render(request, 'ver_solicitud.html', contexto)
 
-
 @login_required(redirect_field_name='login')
+@user_passes_test(admin_check, login_url= 'loggedin')
 def material_edit(request, id_material):
     material = MaterialSolicitado.objects.get(id = id_material)
     if request.method == 'GET':
@@ -114,6 +127,7 @@ def material_edit(request, id_material):
 
 
 @login_required(redirect_field_name='login')
+@user_passes_test(admin_check, login_url= 'loggedin')
 def delete_material(request, id_material):
     material = MaterialSolicitado.objects.get(id = id_material)
     id_solicitud1 = material.solicitud.numero_orden
@@ -122,8 +136,8 @@ def delete_material(request, id_material):
         return redirect('ver_solicitud', id_solicitud= id_solicitud1)
     return render(request, 'delete_material.html', {'material':material})
 
-
 @login_required(redirect_field_name='login')
+@user_passes_test(admin_check, login_url= 'loggedin')
 def delete_solicitud(request, id_solicitud):
     solicitud = SolicitudMaterial.objects.get(numero_orden=id_solicitud)
     if request.method == 'POST':
@@ -131,8 +145,8 @@ def delete_solicitud(request, id_solicitud):
         return redirect('pedidos_central')
     return render(request, 'delete_solicitud.html',{'solicitud':solicitud})
 
-
 @login_required(redirect_field_name='login')
+@user_passes_test(trabajador_bodeguero_check, login_url='loggedin')
 def ver_materiales(request):
     if request.method == 'POST':
         stock_form = StockFrom(request.user.email)
@@ -148,6 +162,7 @@ def ver_materiales(request):
 
 
 @login_required(redirect_field_name='login')
+@user_passes_test(admin_check, login_url='loggedin')
 def Sol_Material(request):
     if request.method == 'POST':
         print("sdadsadsadasPASO11")
@@ -179,6 +194,7 @@ def stock(request):
     return render(request, 'stock.html')
 
 @login_required(redirect_field_name='login')
+@user_passes_test(trabajador_bodeguero_check, login_url='loggedin')
 def ver_pedido2(request):
     if request.method == 'POST':
         solicitud_form = SolicitudForm(request.POST)
@@ -215,18 +231,21 @@ def ver_pedido2(request):
 @login_required(redirect_field_name='login')
 def upd_stock(request):
     lista=[]
-    odoo_conection = od.ODOO()
+    odoo_conection = ODOO()
     #odoo_conection = od._init_(self, url="https://drusq.odoo.com",db="drusq", username="cgardillacurada7@gmail.com",password="120696")
     odoo_conection._init_(url="https://drusq.odoo.com",db="drusq", username="cgardillacurada7@gmail.com",password="120696")
     odoo_conection.connect()
     #odoo_conection.search("purchase.order",lista)
     return render(request, 'odoo_sol.html',{"lista" : odoo_conection.search("purchase.order",lista) })
 
-@login_required(redirect_field_name='login')   
+@login_required(redirect_field_name='login')
+@user_passes_test(admin_check, login_url='loggedin')
 def CreateUsuario(request):
     if request.method == 'POST':
         user_form = UserCreateForm(request.POST)
         permisos_form = PermisosForm(request.POST)
+        print("user_form valid:",user_form.is_valid())
+        print('user_form errores:', user_form.errors)
         if user_form.is_valid() and permisos_form.is_valid():
             print('hola')
             usuario = user_form.save(commit=False)
@@ -276,11 +295,16 @@ def CreateUsuario(request):
         permisos_form = PermisosForm()
     return render(request, 'create_user.html', {'user_form': user_form, 'permisos_form': permisos_form})
 
+@login_required(redirect_field_name='login')
+@user_passes_test(admin_check, login_url='loggedin')
 def ver_usuarios(request):
     users = list(MyUser.objects.filter())
     contexto = {'users': users }
     return render(request, 'ver_usuarios.html', contexto)
 
+
+@login_required(redirect_field_name='login')
+@user_passes_test(admin_check, login_url='loggedin')
 def edit_usuario(request, id_usuario):
     usuario = MyUser.objects.get(id=id_usuario)
     if request.method == 'GET':
@@ -293,6 +317,9 @@ def edit_usuario(request, id_usuario):
     contexto = {'user_form': form, 'usuario': usuario}
     return render(request, 'editar_usuario.html', contexto)
 
+
+@login_required(redirect_field_name='login')
+@user_passes_test(admin_check, login_url='loggedin')
 def delete_usuario(request, id_usuario):
     usuario = MyUser.objects.get(id=id_usuario)
     if request.method == 'POST':

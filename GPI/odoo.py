@@ -57,8 +57,7 @@ class ODOO():
             return "error in connection"
 
     def search(self, model_name, params):
-        print(self.models.execute_kw(self.db, self.uid, self.password, 'purchase.order', 'search_read', [], {
-            'fields': ['partner_id', 'state', 'amount_total', 'data_order', 'notes', 'order_line']}))
+        print(self.models.execute_kw(self.db, self.uid, self.password, 'purchase.order', 'search_read', [], {'fields': ['partner_id', 'state', 'amount_total', 'data_order', 'notes', 'order_line']}))
         try:
             self.connect()
             print(self.models.execute_kw(self.db, self.uid, self.password, 'purchase.order', 'search_read', [],{'fields': ['partner_id', 'state', 'amount_total', 'data_order', 'notes', 'order_line']} ))

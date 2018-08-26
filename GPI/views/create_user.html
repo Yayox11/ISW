@@ -30,7 +30,7 @@
             <div class="form-group text-left align-content-left">
                 <div class="row">
                     <div class="col-5">
-                        <label>{{ user_form.apellido_paterno.label }} (*opcional)</label>
+                        <label>{{ user_form.apellido_paterno.label }}</label>
                     </div>
                     <div class="col-7">
                         {{ user_form.apellido_paterno }}
@@ -40,7 +40,7 @@
             <div class="form-group text-left align-content-left">
                 <div class="row">
                     <div class="col-5">
-                        <label>{{ user_form.apellido_materno.label }}</label>
+                        <label>{{ user_form.apellido_materno.label }} (*opcional)</label>
                     </div>
                     <div class="col-7">
                         {{ user_form.apellido_materno }}
@@ -71,10 +71,20 @@
             <div class="form-group text-left align-content-left">
                 <div class="row">
                     <div class="col-5">
-                        <label>{{ user_form.password.label }}</label>
+                        <label>{{ user_form.password1.label }}</label>
                     </div>
                     <div class="col-7">
-                        {{ user_form.password }}
+                        {{ user_form.password1}}
+                    </div>
+                </div>
+            </div>
+            <div class="form-group text-left align-content-left">
+                <div class="row">
+                    <div class="col-5">
+                        <label>{{ user_form.password2.label }}</label>
+                    </div>
+                    <div class="col-7">
+                        {{ user_form.password2}}
                     </div>
                 </div>
             </div>

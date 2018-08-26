@@ -130,7 +130,7 @@ class MyUserCreationForm(UserCreationForm):
         model = MyUser
         fields = ("email",)
 
-class UserCreateForm(forms.ModelForm):
+class UserCreateForm(UserCreationForm):
     class Meta:
         model = MyUser
         fields = [
@@ -140,7 +140,6 @@ class UserCreateForm(forms.ModelForm):
             'apellido_paterno',
             'email',
             'rut',
-            'password',
         ]
         labels = {
             'first_name': 'Primer nombre',
@@ -149,7 +148,6 @@ class UserCreateForm(forms.ModelForm):
             'apellido_materno': 'Apellido materno',
             'rut': 'Rut',
             'email': 'Email',
-            'password': 'Clave',
         }
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-group'}),
@@ -157,7 +155,6 @@ class UserCreateForm(forms.ModelForm):
             'apellido_paterno': forms.TextInput(attrs={'class': 'form-group'}),
             'apellido_materno': forms.TextInput(attrs={'class': 'form-group'}),
             'email': forms.EmailInput(attrs={'class': 'form-group'}),
-            'password': forms.PasswordInput(attrs={'class': 'form-group'}),
         }
 
 class PermisosForm(forms.Form):
