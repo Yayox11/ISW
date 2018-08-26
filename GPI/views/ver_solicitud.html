@@ -1,76 +1,89 @@
-{% extends "navbar_tables.html" %}
+{% extends "navbar_pedidos.html" %}
 {% load func_extras %}
 {% load i18n %}
 {% block contenido %}
 <div class="container">
 {% language 'es' %}
     <div class="container">
+     <div class="alert alert-danger text-center" role="alert">
+        <h5 class="alert-heading">Datos Solicitante</h5>
+        <hr>
         <div class="row">
-            <div class="col-md-2"><b>Número solicitud:</b></div>
-            <div class="col-2">{{ solicitud.numero_orden }}</div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4"><b>Número solicitud:</b></div>
+            <div class="col-4">{{ solicitud.numero_orden }}</div>
         </div>
         <div class="row">
-            <div class="col-2"><b>Solicitado por:</b></div>
-            <div class="col-2">{{ solicitud.trabajadorobra.user.first_name}} {{ solicitud.trabajadorobra.user.apellido_paterno}}</div>
+            <div class="col-md-2"></div>
+            <div class="col-4"><b>Solicitado por:</b></div>
+            <div class="col-4">{{ solicitud.trabajadorobra.user.first_name}} {{ solicitud.trabajadorobra.user.apellido_paterno}}</div>
         </div>
 
         <div class="row">
-
-            <div class="col-2"><b>Fecha solicitud:</b></div>
-            <div class="col-3">{{ solicitud.fecha_solicitud }}</div>
+            <div class="col-md-2"></div>
+            <div class="col-4"><b>Fecha solicitud:</b></div>
+            <div class="col-4">{{ solicitud.fecha_solicitud }}</div>
 
         </div>
-
     </div>
-    <hr>
-    <br>
+    </div>
     <div  class = "container">
+    <div class="alert alert-secondary text-center" role="alert">
+        <h5 class="alert-heading">Fechas solicitud</h5>
+        <hr>
         <form method="post">
         {% csrf_token %}
         <div class = "form-group">
             <div class = "row">
-                <div class="col-2">{{ form.fecha_requerida.label }}</div>
-                <div class = "col-3">{{ form.fecha_requerida }}</div>
+                <div class="col-2"></div>
+                <div class="col-4"><b>{{ form.fecha_requerida.label }}</b></div>
+                <div class = "col-4">{{ form.fecha_requerida }}</div>
             </div>
         </div>
 
         <div class = "form-group">
             <div class = "row">
-                <div class="col-2">{{ form.fecha_estimada.label }}</div>
-                <div class = "col-3">{{ form.fecha_estimada }}</div>
+                <div class="col-2"></div>
+                <div class="col-4"><b>{{ form.fecha_estimada.label }}</b></div>
+                <div class = "col-4">{{ form.fecha_estimada }}</div>
             </div>
         </div>
 
         <div class = "form-group">
             <div class = "row">
-                <div class="col-2">{{ form.obra.label }}</div>
-                <div class = "col-3">{{ form.obra }}</div>
+                <div class="col-2"></div>
+                <div class="col-4"><b>{{ form.obra.label }}</b></div>
+                <div class = "col-4">{{ form.obra }}</div>
             </div>
         </div>
 
         <div class = "form-group">
             <div class = "row">
-                <div class="col-2">{{ form.estado_solicitud.label }}</div>
-                <div class = "col-3">{{ form.estado_solicitud }}</div>
+                <div class="col-2"></div>
+                <div class="col-4"><b>{{ form.estado_solicitud.label }}</b></div>
+                <div class = "col-4">{{ form.estado_solicitud }}</div>
             </div>
         </div>
 
         <div class="form-group">
 
             <div class="row">
+                <div class="col-5"></div>
                 <div class="col-2 center"> <button class="btn btn-primary" type="submit"> Editar</button> </div>
             </div>
 
         </div>
 
     </form>
-
+    </div>
     </div>
 <div class = "container">
-    <h3 class="alert-heading">Materiales Solicitados</h3>
-    <hr>
-
-    <table id="example" class="table table-striped table-bordered text-center" style="width:80%">
+<div class="row">
+<div class="col-md-4 col-lg-12">
+ <div class="alert alert-secondary text-center" role="alert">
+        <h5 class="alert-heading">Elementos de la solicitud</h5>
+        <hr>
+    <table id="example" class="table table-striped table-bordered text-center" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
@@ -108,7 +121,8 @@
  </table>
 
 </div>
-
+</div>
+</div>
 {% endlanguage %}
 </div>
 

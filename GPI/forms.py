@@ -22,7 +22,7 @@ class SolicitudForm(forms.ModelForm):
         }
 
        widgets = {
-            'fecha_requerida': forms.DateInput(attrs={'class':'datepicker'}),
+            'fecha_requerida': forms.DateInput(attrs={'class':'datepicker','autocomplete':'off','placeholder':'Seleccione una fecha'}),
             'obra': forms.Select(attrs={'class':'form-group'}),
        }
 class SolicitudForm_edit(forms.ModelForm):
@@ -41,8 +41,8 @@ class SolicitudForm_edit(forms.ModelForm):
             'estado_solicitud':'Estado_solicitud',
         }
         widgets = {
-            'fecha_requerida': forms.SelectDateWidget(attrs={'class': 'form-group'}),
-            'fecha_estimada': forms.SelectDateWidget(attrs={'class': 'form-group'}),
+            'fecha_requerida': forms.DateInput(attrs={'class':'datepicker','autocomplete':'off','placeholder':'Seleccione una fecha'}),
+            'fecha_estimada': forms.DateInput(attrs={'class':'datepicker','autocomplete':'off','placeholder':'Seleccione una fecha'}),
             'obra': forms.Select(attrs={'class': 'form-group'}),
             'estado_solicitud': forms.Select(attrs={'class': 'form-group'})
         }
