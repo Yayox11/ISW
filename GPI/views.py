@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.utils import timezone
 
 from GPI.forms import *
-#import odoo as od
+import odoo as od
 
 
 # Create your views here.
