@@ -224,9 +224,76 @@ def upd_stock(request):
 def CreateUsuario(request):
     if request.method == 'POST':
         user_form = UserCreateForm(request.POST)
-        if user_form.is_valid():
-            x = 0
+        permisos_form = PermisosForm(request.POST)
+        if user_form.is_valid() and permisos_form.is_valid():
+            print('hola')
+            usuario = user_form.save(commit=False)
+            if permisos_form.cleaned_data['tipo_usuario'] == "admin":
+                usuario.is_admin = True
+                usuario.is_bodeguero = True
+                usuario.is_trabajador_obra = True
+                usuario.is_encargado_compras = True
+                usuario.save()
+                bodeguero = Bodeguero()
+                bodeguero.user = usuario
+                bodeguero.save()
+
+                trabajador = TrabajadorObra()
+                trabajador.user = usuario
+                trabajador.save()
+
+                encargado = EncargadoCompras()
+                encargado.user = usuario
+                encargado.save()
+
+            elif permisos_form.cleaned_data['tipo_usuario'] == "bodeguero":
+                usuario.is_bodeguero = True
+                usuario.save()
+                bodeguero = Bodeguero()
+                bodeguero.user = usuario
+                bodeguero.save()
+
+
+            elif permisos_form.cleaned_data['tipo_usuario'] == "trabajador":
+                usuario.is_trabajador_obra = True
+                usuario.save()
+                trabajador = TrabajadorObra()
+                trabajador.user = usuario
+                trabajador.save()
+
+            else:
+                usuario.is_encargado_compras = True
+                encargado = EncargadoCompras()
+                encargado.user = usuario
+                encargado.save()
+
+            return HttpResponseRedirect('loggedin')
+
     else:
         user_form = UserCreateForm()
-    return render(request, 'create_user.html', {'user_form': user_form})
+        permisos_form = PermisosForm()
+    return render(request, 'create_user.html', {'user_form': user_form, 'permisos_form': permisos_form})
 
+def ver_usuarios(request):
+    users = list(MyUser.objects.filter())
+    contexto = {'users': users }
+    return render(request, 'ver_usuarios.html', contexto)
+
+def edit_usuario(request, id_usuario):
+    usuario = MyUser.objects.get(id=id_usuario)
+    if request.method == 'GET':
+        form = UserCreateForm(instance=usuario)
+    else:
+        form = UserCreateForm(request.POST, instance=usuario)
+        if form.is_valid():
+            form.save()
+            return redirect('ver_usuarios')
+    contexto = {'user_form': form, 'usuario': usuario}
+    return render(request, 'editar_usuario.html', contexto)
+
+def delete_usuario(request, id_usuario):
+    usuario = MyUser.objects.get(id=id_usuario)
+    if request.method == 'POST':
+        usuario.delete()
+        return redirect('ver_usuarios')
+    return render(request, 'delete_usuario.html', {'usuario': usuario})
