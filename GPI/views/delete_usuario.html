@@ -1,0 +1,51 @@
+{% extends 'navbar_tables.html' %}
+
+{% block contenido %}
+
+    <div class = "container">
+
+        <h2 class="display-4 text-center">¿Deseas eleminar el siguiente usuario? </h2>
+        <hr>
+        <br>
+        <div class = "row text-center">
+            <div class="col-5"> <b>Email:</b> </div>
+            <div class="col-5">{{ usuario.email }}</div>
+        </div>
+        <hr>
+        <div class = "row text-center">
+            <div class="col-5"> <b>Primer nombre:</b> </div>
+            <div class="col-5">{{ usuario.first_name }}</div>
+        </div>
+        <hr>
+        <div class = "row text-center">
+            <div class="col-5"> <b>Segundo nombre:</b> </div>
+            <div class="col-5">{{ usuario.second_name }}</div>
+        </div>
+        <hr>
+        <div class = "row text-center">
+            <div class="col-5"> <b>Apellido paterno:</b> </div>
+            <div class="col-5">{{ usuario.apellido_paterno }}</div>
+        </div>
+        <hr>
+        <div class = "row text-center">
+            <div class="col-5"> <b>Apellido materno:</b> </div>
+            <div class="col-5">{{ usuario.apellido_materno }}</div>
+        </div>
+        <hr>
+        <div class = "row text-center">
+            <div class="col-5"> <b>rut:</b> </div>
+            <div class="col-5">{{ usuario.rut }}</div>
+        </div>
+        <hr>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group text-center">
+                    <button class="btn btn-danger text-center" type="submit">Eliminar</button>
+                    <a class = "btn btn-primary text-center" href="{% url 'ver_usuarios' %}">Cancelar</a>
+            </div>
+
+
+        </form>
+    </div>
+
+{% endblock %}

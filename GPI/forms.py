@@ -140,6 +140,7 @@ class UserCreateForm(forms.ModelForm):
             'apellido_paterno',
             'email',
             'rut',
+            'password',
         ]
         labels = {
             'first_name': 'Primer nombre',
@@ -148,6 +149,7 @@ class UserCreateForm(forms.ModelForm):
             'apellido_materno': 'Apellido materno',
             'rut': 'Rut',
             'email': 'Email',
+            'password': 'Clave',
         }
         widgets = {
             'first_name': forms.TextInput(attrs={'class': 'form-group'}),
@@ -155,7 +157,18 @@ class UserCreateForm(forms.ModelForm):
             'apellido_paterno': forms.TextInput(attrs={'class': 'form-group'}),
             'apellido_materno': forms.TextInput(attrs={'class': 'form-group'}),
             'email': forms.EmailInput(attrs={'class': 'form-group'}),
+            'password': forms.PasswordInput(attrs={'class': 'form-group'}),
         }
+
+class PermisosForm(forms.Form):
+    CHOICES_USER = (
+        ('admin','Administrador'),
+        ('bodeguero','Bodeguero'),
+        ('trabajador','Personal obra'),
+        ('encargado_compras','Encargado compras')
+    )
+    tipo_usuario = forms.ChoiceField(choices= CHOICES_USER)
+
 ##class MyUserChangeForm(UserChangeForm):
     ##def __init__(self, *args, **kwargs):
         ##super(MyUserChangeForm, self).__init__(*args, **kwargs)

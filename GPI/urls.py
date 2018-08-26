@@ -21,4 +21,7 @@ urlpatterns = [
     re_path(r'^delete_material/(?P<id_material>\d+)/$', views.delete_material, name='delete_material'),
     path("upd_stock", views.upd_stock, name='upd_stock'),
     path('crear_usuario', views.CreateUsuario, name = 'crear_usuario'),
+    path('ver_usuarios', views.ver_usuarios, name = 'ver_usuarios'),
+    re_path(r'^editar_usuario/(?P<id_usuario>\d+)/$', views.edit_usuario, name='edit_usuario'),
+    re_path(r'^delete_usuario/(?P<id_usuario>\d+)/$', views.delete_usuario, name='delete_usuario'),
 ]
