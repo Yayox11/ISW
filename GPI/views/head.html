@@ -1,29 +1,22 @@
-
+{% load staticfiles %}
 <html>
 {% block head %}
 <head>
-    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISW</title>
     <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/fonts/ionicons.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/fonts/simple-line-icons.min.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/Contact-Form-Clean.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/Sidebar-Menu.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/Sidebar-Menu1.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/SIdebar-Responsive-2.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/SIdebar-Responsive-21.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/login.css' %}">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 {% endblock %}
 
 {% block body %}
 <body>
+    {% block scripts %}
+    <script src=" {% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    {% endblock %}
+{% block custom_js %}
+
+{% endblock %}
 
 </body>
 {% endblock %}

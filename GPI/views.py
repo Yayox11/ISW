@@ -39,13 +39,11 @@ def auth_view(request):
     username = request.POST.get('username', '')
     password = request.POST.get('password', '')
     user = auth.authenticate(username = username, password = password)
-    print(password)
     if user is not None:
         auth.login(request,user)
-        print(request.user.email)
         return HttpResponseRedirect('loggedin')
     else:
-        return HttpResponseRedirect('invalid_login')
+        return render(request,'login.html', {'user':user})
 
 @login_required(redirect_field_name='login')
 def loggedin(request):
