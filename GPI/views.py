@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.utils import timezone
 
 from GPI.forms import *
-from odoo import *
+from GPI.odoo import *
 
 
 # Create your views here.
@@ -209,7 +209,6 @@ def ver_pedido2(request):
             print("FECHA:", solicitud.fecha_requerida)
             solicitud.trabajadorobra = request.user.trabajadorobra
             solicitud.fecha_solicitud = timezone.now()
-
             for form in formset:
                 if form.is_valid():
                     solicitud.save()
