@@ -3,7 +3,6 @@
 {% load i18n %}
 {% block contenido %}
 <div class="container">
-{% language 'es' %}
     <div class="container">
      <div class="alert alert-danger text-center" role="alert">
         <h5 class="alert-heading">Datos Solicitante</h5>
@@ -22,8 +21,9 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-4"><b>Fecha solicitud:</b></div>
+            {% language 'es' %}
             <div class="col-4">{{ solicitud.fecha_solicitud }}</div>
-
+            {% endlanguage %}
         </div>
     </div>
     </div>
@@ -123,7 +123,6 @@
 </div>
 </div>
 </div>
-{% endlanguage %}
 </div>
 </div>
 
