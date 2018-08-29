@@ -5,9 +5,7 @@
  * General styles
  */
 @import url('https://fonts.googleapis.com/css?family=Monoton');
-body, html {
 
-}
 #background{
     padding: 50vh;
     position: absolute;
