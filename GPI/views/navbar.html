@@ -37,7 +37,7 @@
                 {% if user.is_admin %}<li> <a href="{% url 'crear_usuario' %}" class = "sidebar-option">Crear usuario</a> </li> {% endif %}
                 {% if user.is_admin %}<li> <a href="{% url 'ver_usuarios' %}" class = "sidebar-option">Administrar usuarios</a> </li> {% endif %}
                 {% if user.is_admin %} <li> <a href="{% url 'upd_stock' %}" class="sidebar-option">Ver Pedidos ERP</a></li>  {% endif %}
-                <li> <a href="stock" class="sidebar-option">Ver Stock</a><a href="/logout" class="sidebar-option"><i class="icon-logout"></i>&nbsp;Cerrar Sesion</a></li>
+                <li> <a href="{% url 'stock' %}" class="sidebar-option">Ver Stock</a><a href="/logout" class="sidebar-option"><i class="icon-logout"></i>&nbsp;Cerrar Sesion</a></li>
             </ul>
         </div>
         {% endblock %}
