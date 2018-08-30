@@ -43,7 +43,7 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand text-center"> <a href="/loggedin">GPI</a></li>
-               {% if user.bodeguero and not user.is_admin %}<li> <a href="ver_pedidos" class="sidebar-option">Ver Pedidos</a></li>{% endif %}
+               {% if not user.is_admin %}<li> <a href="ver_pedidos" class="sidebar-option">Ver Pedidos</a></li>{% endif %}
                 {% if user.is_trabajador_obra%} <li> <a href="/ver_pedido2" class="sidebar-option">Realizar Pedidos</a></li> {% endif %}
                 {% if user.is_admin %}<li> <a href="{% url 'pedidos_central' %}" class = "sidebar-option">Ver Pedidos</a> </li> {% endif %}
                 {% if user.is_admin %}<li> <a href="{% url 'crear_usuario' %}" class = "sidebar-option">Crear usuario</a> </li> {% endif %}

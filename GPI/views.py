@@ -81,7 +81,12 @@ def SolicitudCreate(request):
 @login_required(redirect_field_name='login')
 @user_passes_test(trabajador_bodeguero_check, login_url= 'loggedin')
 def ver_pedidos(request):
-    obra_trabajador = Obra.objects.filter(bodeguero__user__email=request.user.email).distinct().prefetch_related('bodeguero').order_by('nombre')
+    obra_trabajador = 0
+    if request.user.is_bodeguero:
+        obra_trabajador = Obra.objects.filter(bodeguero__user__email=request.user.email).distinct().prefetch_related('bodeguero').order_by('nombre')
+    else:
+        obra_trabajador = Obra.objects.filter(trabajadorobra__user__email=request.user.email).distinct().prefetch_related('bodeguero').order_by('nombre')
+
     lista_ordenes = []
     for ob in obra_trabajador:
         lista_ordenes.append(SolicitudMaterial.objects.filter(obra__nombre=ob).distinct().prefetch_related('obra').order_by('fecha_requerida','fecha_solicitud','obra'))
