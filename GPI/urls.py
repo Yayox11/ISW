@@ -24,4 +24,5 @@ urlpatterns = [
     path('ver_usuarios', views.ver_usuarios, name = 'ver_usuarios'),
     re_path(r'^editar_usuario/(?P<id_usuario>\d+)/$', views.edit_usuario, name='edit_usuario'),
     re_path(r'^delete_usuario/(?P<id_usuario>\d+)/$', views.delete_usuario, name='delete_usuario'),
+    path('odoo_sol_add', views.Sol_add, name = 'odoo_sol_add'),
 ]

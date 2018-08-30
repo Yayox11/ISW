@@ -1,0 +1,8 @@
+{% extends 'navbar_tables.html' %}
+{% block contenido %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form>
+{% endblock %}

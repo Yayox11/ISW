@@ -323,3 +323,14 @@ def delete_usuario(request, id_usuario):
         usuario.delete()
         return redirect('ver_usuarios')
     return render(request, 'delete_usuario.html', {'usuario': usuario})
+
+@login_required(redirect_field_name='login')
+@user_passes_test(admin_check, login_url='loggedin')
+def Sol_add(request):
+    if request.method == 'POST':
+         orden = Sol_add_form(request.POST)
+         if orden.is_valid():
+             print("enviar")
+    else:
+        orden = Sol_add_form()
+    return render(request, 'odoo_add_sol.html', {'form':orden})

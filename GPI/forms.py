@@ -166,6 +166,17 @@ class PermisosForm(forms.Form):
     )
     tipo_usuario = forms.ChoiceField(choices= CHOICES_USER)
 
+
+
+class Sol_add_form(forms.Form):
+    partner_id = forms.CharField(max_length=20)
+    state = forms.CharField(max_length=20)
+    amount_total = forms.CharField(max_length=20)
+    data_order = forms.CharField(max_length=20)
+    notes = forms.Textarea()
+    order_line = forms.CharField(max_length=20)
+
+
 ##class MyUserChangeForm(UserChangeForm):
     ##def __init__(self, *args, **kwargs):
         ##super(MyUserChangeForm, self).__init__(*args, **kwargs)
