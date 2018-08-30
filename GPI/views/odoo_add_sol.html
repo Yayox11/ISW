@@ -1,9 +1,66 @@
 {% extends 'navbar_tables.html' %}
 {% block contenido %}
-
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button class="btn btn-primary text-center" type="submit" name="enviar">Agregar Solicitud</button>
-    </form>
+ <div class="row">
+    <div class="col-4">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Solicitud ERP</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+            <div class="col-md-4 col-lg-12">
+                <h1 class="display-3 text-center">Solicitud ERP</h1>
+                <hr>
+             </div>
+        <div class="col-2"></div>
+        <div class="col-8 text-center">
+         <div class="alert alert-secondary" role="alert">
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                <div class="col-2"></div>
+                <div class="col-4 text-center">{{ form.partner_id.label }}</div>
+                <div class="col-4 text-center">{{ form.partner_id }}</div>
+                </div>
+                <br>
+                <div class="row">
+                <div class="col-2"></div>
+                <div class="col-4 text-center">{{ form.state.label }}</div>
+                <div class="col-4 text-center">{{ form.state }}</div>
+                </div>
+                <br>
+                                <div class="row">
+                <div class="col-2"></div>
+                <div class="col-4 text-center">{{ form.amount_total.label }}</div>
+                <div class="col-4 text-center">{{ form.amount_total }}</div>
+                </div>
+                <br>
+                                <div class="row">
+                <div class="col-2"></div>
+                <div class="col-4 text-center">{{ form.data_order.label }}</div>
+                <div class="col-4 text-center">{{ form.data_order}}</div>
+                </div>
+                <br>
+                                <div class="row">
+                <div class="col-2"></div>
+                <div class="col-4 text-center">{{ form.notes.label }}</div>
+                <div class="col-4 text-center">{{ form.notes}}</div>
+                </div>
+                <br>
+                                <div class="row">
+                <div class="col-2"></div>
+                <div class="col-4 text-center">{{ form.order_line.label }}</div>
+                <div class="col-4 text-center">{{ form.order_line }}</div>
+                </div>
+                <br>
+                <button class="btn btn-primary text-center" type="submit" name="enviar">Agregar Solicitud</button>
+            </form>
+          </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
