@@ -173,7 +173,7 @@ class Sol_add_form(forms.Form):
     state = forms.CharField(max_length=20)
     amount_total = forms.CharField(max_length=20)
     data_order = forms.CharField(max_length=20)
-    notes = forms.Textarea()
+    notes = forms.CharField(max_length=20)
     order_line = forms.CharField(max_length=20)
 
 

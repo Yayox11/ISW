@@ -1,4 +1,5 @@
 import xmlrpc.client as xc
+import datetime
 
 """url = 'https://drusq.odoo.com'
 db = 'drusq'
@@ -46,6 +47,12 @@ class ODOO():
         self.common = None
         self.uid = None
         self.models = None
+        self.partner_id = None
+        self.state= None
+        self.amount_total = None
+        self.data_order = None
+        self.notes = None
+        self.order_line = None
 
     def connect(self):
         try:
@@ -66,5 +73,19 @@ class ODOO():
             #ids = self.models.execute_kw(self.db, self.uid, self.password, model_name, 'search', [params])
             #print(self.models.execute_kw(self.db, self.uid, self.password,'product.order', 'read',[ids], {'fields': ['name',]}))
             #self.models.execute_kw(self.db, self.uid, self.password, model_name, 'search', [params])
+        except:
+            return -1
+    def agregar(self, model_name, params):
+        try:
+            self.connect()
+            self.models.execute_kw(self.db, self.uid,self.password, 'purchase.order', 'create', [{
+                'partner_id' : self.partner_id,
+                'state': self.state,
+                'amount_total': self.amount_total,
+                'data_order': self.data_order,
+                'notes': self.notes,
+                'order_line': self.order_line,
+                'date_planned': datetime.datetime.now()
+            }])
         except:
             return -1

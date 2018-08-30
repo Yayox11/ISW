@@ -225,15 +225,6 @@ def ver_pedido2(request):
         formset = MaterialesFormSet(queryset=MaterialSolicitado.objects.none())
     return render(request, 'pedido2.html',{'solicitud_form': solicitud_form, 'formset': formset})
 
-@login_required(redirect_field_name='login')
-def upd_stock(request):
-    lista=[]
-    odoo_conection = ODOO()
-    #odoo_conection = od._init_(self, url="https://drusq.odoo.com",db="drusq", username="cgardillacurada7@gmail.com",password="120696")
-    odoo_conection._init_(url="https://drusq.odoo.com",db="drusq", username="cgardillacurada7@gmail.com",password="120696")
-    odoo_conection.connect()
-    #odoo_conection.search("purchase.order",lista)
-    return render(request, 'odoo_sol.html',{"lista" : odoo_conection.search("purchase.order",lista) })
 
 @login_required(redirect_field_name='login')
 @user_passes_test(admin_check, login_url='loggedin')
@@ -328,9 +319,31 @@ def delete_usuario(request, id_usuario):
 @user_passes_test(admin_check, login_url='loggedin')
 def Sol_add(request):
     if request.method == 'POST':
-         orden = Sol_add_form(request.POST)
-         if orden.is_valid():
+         orden_sol = Sol_add_form(request.POST)
+         if orden_sol.is_valid():
              print("enviar")
+             #orden_sol = orden.save(commit=False)
+             odooAdd = ODOO()
+             odooAdd._init_(url="https://drusq.odoo.com", db="drusq", username="cgardillacurada7@gmail.com", password="120696")
+             odooAdd.partner_id = orden_sol.cleaned_data["partner_id"]
+             odooAdd.state = orden_sol.cleaned_data["state"]
+             odooAdd.amount_total = orden_sol.cleaned_data["amount_total"]
+             odooAdd.data_order = orden_sol.cleaned_data["data_order"]
+             odooAdd.notes = orden_sol.cleaned_data["notes"]
+             odooAdd.order_line = orden_sol.cleaned_data["order_line"]
+             odooAdd.agregar("purchase.order", [])
+             print("ingresado")
+
     else:
-        orden = Sol_add_form()
-    return render(request, 'odoo_add_sol.html', {'form':orden})
+        orden_sol = Sol_add_form()
+    return render(request, 'odoo_add_sol.html', {'form':orden_sol})
+
+@login_required(redirect_field_name='login')
+def upd_stock(request):
+    lista=[]
+    odoo_conection = ODOO()
+    #odoo_conection = od._init_(self, url="https://drusq.odoo.com",db="drusq", username="cgardillacurada7@gmail.com",password="120696")
+    odoo_conection._init_(url="https://drusq.odoo.com",db="drusq", username="cgardillacurada7@gmail.com",password="120696")
+    odoo_conection.connect()
+    #odoo_conection.search("purchase.order",lista)
+    return render(request, 'odoo_sol.html',{"lista" : odoo_conection.search("purchase.order",lista) })
